@@ -41,7 +41,7 @@ export default function FooterEnd() {
         <motion.span variants={child}>http://carlwicker.co.uk</motion.span>
         <motion.span variants={child}>carlwicker@gmail.com</motion.span>
         <motion.span variants={child}>{""}</motion.span>
-        <motion.span variants={child}>44 (0) 7810 830237</motion.span>
+        <motion.span variants={child}>44 7810 830237</motion.span>
       </motion.span>
     </div>
   );
