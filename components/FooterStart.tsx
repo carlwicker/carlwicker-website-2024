@@ -13,7 +13,7 @@ export default function FooterStart() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.25, // Stagger the animation of children by 0.1 second
+        staggerChildren: 0.12, // Stagger the animation of children by 0.1 second
       },
     },
   };
