@@ -1,29 +1,67 @@
+"use client";
+
 import Head from "next/head";
 import CyberCortexVideo from "@/components/CyberCortexVideo";
 import Footer from "@/components/Footer";
+import Ticker from "@/components/Ticker";
+import { useEffect, useState } from "react";
 
-export const metadata = {
-  title: "CYBER//CORTEX//X21",
-  description: "CYBER//CORTEX//X21",
-};
+// export const metadata = {
+//   title: "CYBER//CORTEX//X21",
+//   description: "CYBER//CORTEX//X21",
+// };
 
 export default function Home() {
+  // Function to generate random darker color
+  const generateRandomColor = () => {
+    const letters = "01234567"; // Limit to darker spectrum
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * letters.length)];
+    }
+    return color;
+  };
+
+  // Initialize bgColor with a static value to match server and client initial render
+  const [bgColor, setBgColor] = useState("#655666"); // Example static color
+
+  useEffect(() => {
+    // Set the background color to a random color only on the client side
+    setBgColor(generateRandomColor());
+
+    const intervalId = setInterval(() => {
+      // Update the state with a new random color
+      setBgColor(generateRandomColor());
+    }, 5000); // Change color every 5 seconds
+
+    return () => clearInterval(intervalId); // Clean up the interval on component unmount
+  }, []);
+
   return (
-    <main data-scroll-section className="bg-black text-white ">
-      <div className="container mx-auto flex min-h-screen flex-col justify-center uppercase p-5">
-        <h1 className="lg:text-9xl text-4xl font-bold uppercase">
+    <main
+      data-scroll-section
+      className="text-white bg-transition"
+      style={{ backgroundColor: bgColor }}
+    >
+      <div className="container mx-auto flex min-h-screen flex-col justify-center uppercase p-5 gap-5">
+        <h1 className="xl:text-9xl text-3xl md:text-4xl lg:text-6xl font-bold uppercase tracking-0">
           Transforming Ideas into Digital Masterpieces
         </h1>
         <span>
           <a
             href="mailto:carlwicker@gmail.com"
-            className="hover:text-red-400 lg:text-3xl text-xl"
+            className={`lg:text-3xl text-xl bg-black p-2 hover:text-black hover:bg-white`}
           >
             carlwicker@gmail.com
           </a>
         </span>
-        <span className="hover:text-red-400 lg:text-3xl text-xl">
-          <a href="tel:44 7810 830237">44 7810 830237</a>
+        <span>
+          <a
+            className={`lg:text-3xl text-xl bg-black p-2 hover:text-black hover:bg-white`}
+            href="tel:44 7810 830237"
+          >
+            44 7810 830237
+          </a>
         </span>
       </div>
 
