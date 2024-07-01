@@ -40,22 +40,21 @@ export default function Home() {
   return (
     <main
       data-scroll-section
-      className="text-white bg-transition"
+      className="text-white bg-transition p-5"
       style={{ backgroundColor: bgColor }}
     >
-      <div className="container mx-auto flex min-h-screen flex-col justify-center uppercase p-5 gap-5">
-        <h1 className="xl:text-9xl text-3xl md:text-4xl lg:text-6xl font-bold uppercase tracking-0">
+      <div className="container mx-auto flex min-h-screen flex-col justify-center uppercase  gap-4">
+        <h1 className="xl:text-9xl text-4xl md:text-4xl lg:text-6xl font-bold uppercase tracking-0">
           Transforming Ideas into Digital Masterpieces
         </h1>
-        <span>
+        <span className="flex flex-col gap-2 w-fit">
           <a
             href="mailto:carlwicker@gmail.com"
             className={`lg:text-3xl text-xl bg-black p-2 hover:text-black hover:bg-white`}
           >
             carlwicker@gmail.com
           </a>
-        </span>
-        <span>
+
           <a
             className={`lg:text-3xl text-xl bg-black p-2 hover:text-black hover:bg-white`}
             href="tel:44 7810 830237"
