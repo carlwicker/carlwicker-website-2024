@@ -64,7 +64,7 @@ export default function Home() {
         </span>
       </div>
 
-      <CyberCortexVideo />
+      <CyberCortexVideo bgColor={bgColor} />
 
       <Footer />
     </main>
