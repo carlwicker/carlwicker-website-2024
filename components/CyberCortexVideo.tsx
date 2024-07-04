@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, motionValue } from "framer-motion";
 import * as THREE from "three";
 
 export default function CyberCortexVideo({ bgColor }: any) {
@@ -15,20 +15,20 @@ export default function CyberCortexVideo({ bgColor }: any) {
     visible: { y: 0, transition: { duration: 0 } },
   };
 
-  const textStyle = {
+  const textStyle: MotionStyle = {
     backgroundImage: 'url("./jpg/painting2.jpg")', // Example background
     backgroundSize: "cover",
     WebkitBackgroundClip: "text",
     backgroundClip: "text",
     color: "transparent",
     WebkitTextFillColor: "transparent", // For Safari
-    position: "absolute",
-    font: "900 248px sans-serif",
-    lineHeight: "0.7",
-    fontWeight: "900",
-    margin: "600px",
-    leading: "-15px",
-    letterSpacing: "-30px",
+    position: motionValue("absolute"),
+    font: motionValue("900 248px sans-serif"),
+    lineHeight: motionValue("0.7"),
+    fontWeight: motionValue("900"),
+    margin: motionValue("600px"),
+    leading: motionValue("-15px"),
+    letterSpacing: motionValue("-30px"),
   };
 
   useEffect(() => {

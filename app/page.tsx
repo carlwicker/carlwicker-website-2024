@@ -54,7 +54,7 @@ export default function Home() {
         className="container mx-auto flex min-h-screen flex-col justify-center uppercase  gap-4 "
       >
         <h1 className="xl:text-9xl text-4xl md:text-4xl lg:text-6xl font-bold uppercase tracking-0 z-50">
-          Break rules // make cool shit
+          Break standard practice // make cool shit
         </h1>
         <span className="flex flex-col gap-2 w-fit">
           <a
