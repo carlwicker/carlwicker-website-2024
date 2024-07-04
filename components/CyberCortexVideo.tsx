@@ -26,7 +26,7 @@ export default function CyberCortexVideo({ bgColor }: any) {
     font: motionValue("900 248px sans-serif"),
     lineHeight: motionValue("0.7"),
     fontWeight: motionValue("900"),
-    margin: motionValue("600px"),
+    // margin: motionValue("600px"),
     leading: motionValue("-15px"),
     letterSpacing: motionValue("-30px"),
   };
@@ -103,13 +103,13 @@ export default function CyberCortexVideo({ bgColor }: any) {
 
   return (
     <div
-      className="container mx-auto min-h-max flex items-center justify-center leading-tight tracking-[-50] -z-10"
+      className="container mx-auto min-h-max flex items-center justify-center leading-tight tracking-[-50]"
       ref={canvasRef}
       // style={{ backgroundColor: bgColor }}
     >
       <motion.span
         style={textStyle} // Apply the masking style here
-        className="text-[#111] uppercase text-5xl font-extrabold mx-auto p-16 m-56 -z-50"
+        className="text-[#111] uppercase text-5xl font-extrabold mx-auto  -z-50"
       >
         cutting-edge technologies and jaw-dropping design catapults user
         experiences into another dimension With a relentless quest for

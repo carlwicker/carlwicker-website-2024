@@ -51,10 +51,10 @@ export default function Home() {
       <div
         data-scroll
         data-scroll-speed="2"
-        className="container mx-auto flex min-h-screen flex-col justify-center uppercase  gap-4 "
+        className="container mx-auto flex min-h-screen flex-col justify-center  gap-4 "
       >
-        <h1 className="xl:text-9xl text-4xl md:text-4xl lg:text-6xl font-bold uppercase tracking-0 z-50">
-          Break standard practice // make cool shit
+        <h1 className="xl:text-9xl text-4xl md:text-4xl lg:text-6xl font-extrabold uppercase  tracking-[-0.9px] z-50 break-words">
+          Transforming Ideas Into Stunning, High-Performance Websites.
         </h1>
         <span className="flex flex-col gap-2 w-fit">
           <a
