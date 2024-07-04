@@ -15,7 +15,7 @@ export default function CyberCortexVideo({ bgColor }: any) {
     visible: { y: 0, transition: { duration: 0 } },
   };
 
-  const textStyle: MotionStyle = {
+  const textStyle: any = {
     backgroundImage: 'url("./jpg/painting2.jpg")', // Example background
     backgroundSize: "cover",
     WebkitBackgroundClip: "text",
@@ -108,9 +108,6 @@ export default function CyberCortexVideo({ bgColor }: any) {
       // style={{ backgroundColor: bgColor }}
     >
       <motion.span
-        initial="hidden"
-        variants={variants}
-        animate={isInView ? "visible" : "hidden"}
         style={textStyle} // Apply the masking style here
         className="text-[#111] uppercase text-5xl font-extrabold mx-auto p-16 m-56 -z-50"
       >
