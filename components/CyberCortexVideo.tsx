@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from "react";
+"use client";
+
+import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import * as THREE from "three";
 
@@ -6,10 +8,27 @@ export default function CyberCortexVideo({ bgColor }: any) {
   const ref = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: false });
+  const cubeRotationRef = useRef({ x: 0, y: 0 });
 
   const variants = {
     hidden: { y: 0 },
     visible: { y: 0, transition: { duration: 0 } },
+  };
+
+  const textStyle = {
+    backgroundImage: 'url("./jpg/painting2.jpg")', // Example background
+    backgroundSize: "cover",
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+    color: "transparent",
+    WebkitTextFillColor: "transparent", // For Safari
+    position: "absolute",
+    font: "900 248px sans-serif",
+    lineHeight: "0.7",
+    fontWeight: "900",
+    margin: "600px",
+    leading: "-15px",
+    letterSpacing: "-30px",
   };
 
   useEffect(() => {
@@ -48,18 +67,6 @@ export default function CyberCortexVideo({ bgColor }: any) {
     let targetRotationX = 0;
     let targetRotationY = 0;
 
-    const animate = function () {
-      requestAnimationFrame(animate);
-
-      // Gradually adjust rotation to approach target rotation, applying inertia
-      cube.rotation.x += (targetRotationX - cube.rotation.x) * inertia;
-      cube.rotation.y += (targetRotationY - cube.rotation.y) * inertia;
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
     const onMouseMove = (event: any) => {
       // Calculate target rotation based on mouse position
       const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
@@ -72,6 +79,16 @@ export default function CyberCortexVideo({ bgColor }: any) {
 
     // Add the event listener for mousemove
     window.addEventListener("mousemove", onMouseMove);
+
+    const animate = function () {
+      requestAnimationFrame(animate);
+      // Use the ref for rotation
+      cube.rotation.x = cubeRotationRef.current.x;
+      cube.rotation.y = cubeRotationRef.current.y;
+      renderer.render(scene, camera);
+    };
+
+    animate();
 
     // Existing animation code...
 
@@ -86,29 +103,20 @@ export default function CyberCortexVideo({ bgColor }: any) {
 
   return (
     <div
-      className="container mx-auto"
+      className="container mx-auto min-h-max flex items-center justify-center leading-tight tracking-[-50] -z-10"
       ref={canvasRef}
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100%",
-      }}
+      // style={{ backgroundColor: bgColor }}
     >
       <motion.span
-        className="text-[#111] uppercase text-5xl font-extrabold mx-auto"
         initial="hidden"
         variants={variants}
         animate={isInView ? "visible" : "hidden"}
-        style={{ position: "absolute", zIndex: 2 }}
+        style={textStyle} // Apply the masking style here
+        className="text-[#111] uppercase text-5xl font-extrabold mx-auto p-16 m-56 -z-50"
       >
-        <div
-          className="container mx-auto lg:text-9xl text-3xl md:text-5xl"
-          ref={ref}
-        >
-          cutting-edge technologies and jaw-dropping design catapults user
-          experiences into another dimension. With a relentless quest for
-          perfection.
-        </div>
+        cutting-edge technologies and jaw-dropping design catapults user
+        experiences into another dimension With a relentless quest for
+        perfection
       </motion.span>
     </div>
   );

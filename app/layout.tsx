@@ -32,12 +32,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        data-scroll-container
-        ref={scrollRef}
-        style={{ willChange: "transform" }}
-        className={inter.className}
-      >
+      <body data-scroll-container ref={scrollRef} className={inter.className}>
         {children}
       </body>
     </html>

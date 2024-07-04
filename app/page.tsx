@@ -40,12 +40,21 @@ export default function Home() {
   return (
     <main
       data-scroll-section
-      className="text-white bg-transition p-5"
-      style={{ backgroundColor: bgColor }}
+      className="text-white bg-transition"
+      // style={{
+      //   backgroundImage: 'url("./jpg/painting2.jpg")', // Add your image path here
+      //   backgroundSize: "cover", // Ensure the background covers the element
+      //   backgroundPosition: "center 50%", // Adjusted for vertical centering
+      // }}
     >
-      <div className="container mx-auto flex min-h-screen flex-col justify-center uppercase  gap-4">
-        <h1 className="xl:text-9xl text-4xl md:text-4xl lg:text-6xl font-bold uppercase tracking-0">
-          Transforming Ideas into Digital Masterpieces
+      {/* <Ticker /> */}
+      <div
+        data-scroll
+        data-scroll-speed="2"
+        className="container mx-auto flex min-h-screen flex-col justify-center uppercase  gap-4 "
+      >
+        <h1 className="xl:text-9xl text-4xl md:text-4xl lg:text-6xl font-bold uppercase tracking-0 z-50">
+          Break rules // make cool shit
         </h1>
         <span className="flex flex-col gap-2 w-fit">
           <a
@@ -63,8 +72,9 @@ export default function Home() {
           </a>
         </span>
       </div>
-
-      <CyberCortexVideo bgColor={bgColor} />
+      <div className="-z-10">
+        <CyberCortexVideo bgColor={bgColor} />
+      </div>
 
       <Footer />
     </main>

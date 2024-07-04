@@ -16,17 +16,29 @@
   }
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+}
 
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+img {
+  max-width: 100%; /* Ensures image is responsive but does not warp dimensions */
+  height: auto; /* Maintains aspect ratio */
+}
+
+html[data-scroll-orientation="horizontal"] {
+  body {
+    width: fit-content;
+  }
+  [data-scroll-container] {
+    display: flex;
+  }
 }
 
 .bg-transition {
