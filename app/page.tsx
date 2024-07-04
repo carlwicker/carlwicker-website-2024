@@ -47,7 +47,6 @@ export default function Home() {
       //   backgroundPosition: "center 50%", // Adjusted for vertical centering
       // }}
     >
-      {/* <Ticker /> */}
       <div
         data-scroll
         data-scroll-speed="2"
@@ -63,7 +62,7 @@ export default function Home() {
           >
             carlwicker@gmail.com
           </a>
-
+          <Ticker />
           <a
             className={`lg:text-3xl text-xl bg-black p-2 hover:text-black hover:bg-white`}
             href="tel:44 7810 830237"

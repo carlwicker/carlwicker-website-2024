@@ -5,7 +5,7 @@ const Ticker = () => {
       data-scroll-section
     >
       <div
-        className="inline-block animate-slide-right font-bold text-[800px] uppercase -z-10"
+        className="inline-block animate-slide-right font-bold text-[800px] uppercase z-50"
         data-scroll
         data-scroll-speed="2" // Adjust the scroll speed as needed
       >
