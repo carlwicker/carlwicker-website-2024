@@ -3,7 +3,7 @@
 import Head from "next/head";
 import CyberCortexVideo from "@/components/CyberCortexVideo";
 import Footer from "@/components/Footer";
-import Ticker from "@/components/Ticker";
+
 import { useEffect, useState } from "react";
 
 // export const metadata = {
@@ -38,15 +38,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main
-      data-scroll-section
-      className="text-white bg-transition"
-      // style={{
-      //   backgroundImage: 'url("./jpg/painting2.jpg")', // Add your image path here
-      //   backgroundSize: "cover", // Ensure the background covers the element
-      //   backgroundPosition: "center 50%", // Adjusted for vertical centering
-      // }}
-    >
+    <main data-scroll-section className="text-white bg-transition">
       <div
         data-scroll
         data-scroll-speed="2"
@@ -62,7 +54,7 @@ export default function Home() {
           >
             carlwicker@gmail.com
           </a>
-          <Ticker />
+
           <a
             className={`lg:text-3xl text-xl bg-black p-2 hover:text-black hover:bg-white`}
             href="tel:44 7810 830237"
