@@ -109,7 +109,7 @@ export default function CyberCortexVideo({ bgColor }: any) {
     >
       <motion.span
         style={textStyle} // Apply the masking style here
-        className="text-[#111] uppercase text-5xl font-extrabold mx-auto  -z-50"
+        className="text-[#111] uppercase text-5xl font-extrabold mx-auto  -z-50 overflow-hidden"
       >
         cutting-edge technologies and jaw-dropping design catapults user
         experiences into another dimension With a relentless quest for
