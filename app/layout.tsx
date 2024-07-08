@@ -38,7 +38,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en" className="p-5">
+    <html lang="en" className="">
       <body data-scroll-container ref={scrollRef} className={inter.className}>
         {children}
       </body>
