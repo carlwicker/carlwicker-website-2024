@@ -1,11 +1,10 @@
-import Head from "next/head";
 import CyberCortexVideo from "@/components/CyberCortexVideo";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 
 export const metadata = {
-  title: "CYBER//CORTEX//X21",
-  description: "CYBER//CORTEX//X21",
+  title: "Carl Wicker - Web Developer",
+  description: "Transforming Ideas Into Stunning, High-Performance Websites.",
 };
 
 export default function Home() {

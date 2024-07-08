@@ -21,7 +21,7 @@ export default function useBgColor() {
 
     // Step 4: Clear the interval on component unmount
     return () => clearInterval(intervalId);
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []);
 
   // Step 5: Return the current color
   return color;
