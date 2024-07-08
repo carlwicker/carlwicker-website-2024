@@ -10,13 +10,14 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main
-      data-scroll-section
-      className="text-white bg-transition overflow-hidden"
-    >
-      <Hero />
-      <CyberCortexVideo />
-      <Footer />
+    <main data-scroll-section className="relative text-white">
+      <div className="absolute inset-0">
+        <CyberCortexVideo />
+      </div>
+      <div className="relative z-10">
+        <Hero />
+        <Footer />
+      </div>
     </main>
   );
 }

@@ -29,12 +29,12 @@ export default function CyberCortexVideo() {
 
   return (
     <div
-      className="container mx-auto flex items-center justify-center leading-tight tracking-[-50]"
+      className="container mx-auto flex items-center justify-center leading-tight tracking-[-50] w-full h-full object-cover"
       ref={canvasRef}
     >
       <motion.span
         style={textStyle} // Apply the masking style here
-        className="text-[#111] uppercase lg:text-5xl text-2xl font-extrabold mx-auto -z-50"
+        className="text-[#111] uppercase lg:text-5xl text-2xl font-extrabold mx-auto -z-50 w-screen  overflow-hidden"
       >
         cutting-edge technologies and jaw-dropping design catapults user
         experiences into another dimension With a relentless quest for
