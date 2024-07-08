@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { useEffect, useRef } from "react";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./globals.css";
+import CyberCortexVideo from "@/components/CyberCortexVideo";
+import useBgColor from "../hooks/useBgColor"; //
 
 const inter = Inter({ subsets: ["latin"], weight: ["200", "400", "900"] });
 
@@ -13,6 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const scrollRef = useRef(null);
+  const bgColor = useBgColor();
 
   useEffect(() => {
     // Dynamically import LocomotiveScroll only on the client side
@@ -31,7 +34,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="en" className="p-5">
       <body data-scroll-container ref={scrollRef} className={inter.className}>
         {children}
       </body>
