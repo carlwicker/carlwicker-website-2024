@@ -10,7 +10,10 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main data-scroll-section className="text-white bg-transition">
+    <main
+      data-scroll-section
+      className="text-white bg-transition overflow-hidden"
+    >
       <Hero />
       <CyberCortexVideo />
       <Footer />
