@@ -1,16 +1,4 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useInView, motionValue } from "framer-motion";
-
 export default function CyberCortexVideo() {
-  const canvasRef = useRef<HTMLDivElement>(null);
-
-  const variants = {
-    hidden: { y: 0 },
-    visible: { y: 0, transition: { duration: 0 } },
-  };
-
   const textStyle: any = {
     backgroundImage: 'url("./jpg/painting2.jpg")', // background
     backgroundSize: "cover",
@@ -28,18 +16,15 @@ export default function CyberCortexVideo() {
   };
 
   return (
-    <div
-      className="container mx-auto flex  justify-center  leading-tight tracking-[-50] w-full  object-cover"
-      ref={canvasRef}
-    >
-      <motion.span
+    <div className="container mx-auto flex justify-center  leading-tight tracking-[-50] w-full  object-cover">
+      <div
         style={textStyle} // Apply the masking style here
-        className="text-[#111] uppercase lg:text-5xl text-2xl font-extrabold mx-auto -z-50 w-screen  overflow-hidden "
+        className="text-[#111] uppercase lg:text-5xl text-2xl font-extrabold mx-auto -z-50 w-screen  overflow-hidden h-[200vh] "
       >
         cutting-edge technologies and jaw-dropping design catapults user
         experiences into another dimension With a relentless quest for
         perfection
-      </motion.span>
+      </div>
     </div>
   );
 }
