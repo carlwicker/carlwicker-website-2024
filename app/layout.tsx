@@ -26,6 +26,10 @@ export default function RootLayout({
           smooth: true,
         });
 
+        new ResizeObserver(() => scroll.update()).observe(
+          document.querySelector("[data-scroll-container]") as Element
+        );
+
         return () => {
           scroll.destroy();
         };
