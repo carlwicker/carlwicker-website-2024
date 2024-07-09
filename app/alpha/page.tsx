@@ -2,9 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AlphaPage() {
   const [imageUrl, setImageUrl] = useState("");
+
+  const randomNumBetween = () => {
+    return Math.floor(Math.random() * (10 - 0 + 1));
+  };
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -15,22 +20,38 @@ export default function AlphaPage() {
       );
       const data = await response.json();
       console.log(data);
-      setImageUrl(data[2]?.urls.regular);
+      setImageUrl(data[randomNumBetween()]?.urls.regular);
     };
 
     fetchImage();
   }, []);
 
   return (
-    <div>
-      {imageUrl && (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      {imageUrl !== "" && (
         <Image
           src={imageUrl}
           alt="Random Unsplash Image"
           layout="fill"
           objectFit="cover"
+          priority={true}
         />
       )}
+      <Link href="/" rel="preload">
+        <button
+          className="bg-black hover:text-black hover:bg-white text-white absolute z-20 text-4xl"
+          style={{ fontFamily: "sans-serif" }}
+        >
+          HOME
+        </button>
+      </Link>
     </div>
   );
 }

@@ -4,8 +4,11 @@ import { Inter } from "next/font/google";
 import { useEffect, useRef } from "react";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./globals.css";
-import CyberCortexVideo from "@/components/CyberCortexVideo";
 import useBgColor from "../hooks/useBgColor"; //
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import Head from "next/head";
+import PageTransitionEffect from "@/components/PageTransitionEfffect";
 
 const inter = Inter({ subsets: ["latin"], weight: ["200", "400", "900"] });
 
@@ -38,10 +41,21 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en" className="">
-      <body data-scroll-container ref={scrollRef} className={inter.className}>
-        {children}
-      </body>
-    </html>
+    <>
+      <Head>
+        <title>Carl Wicker - Web Developer</title>
+        <meta
+          name="description"
+          content="Transforming Ideas Into Stunning, High-Performance Websites"
+        />
+        {/* Add more meta tags as needed for SEO */}
+      </Head>
+
+      <html lang="en" className="">
+        <body data-scroll-container ref={scrollRef} className={inter.className}>
+          <PageTransitionEffect>{children}</PageTransitionEffect>
+        </body>
+      </html>
+    </>
   );
 }

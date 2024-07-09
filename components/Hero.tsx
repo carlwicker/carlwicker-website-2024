@@ -70,6 +70,12 @@ export default function Hero() {
           >
             44 7810 830237
           </motion.a>
+
+          <Link href="/alpha">
+            <button className="bg-black hover:text-black hover:bg-white">
+              ALPHA
+            </button>
+          </Link>
         </motion.div>
       </div>
     </div>
