@@ -38,8 +38,8 @@ export default function Hero() {
       data-scroll-speed="2"
       className="container mx-auto flex min-h-screen flex-col justify-center p-5 uppercase"
     >
-      <h1 className="xl:text-9xl text-4xl md:text-4xl lg:text-6xl font-extrabold tracking-[-0.9px] z-50 break-words">
-        Transforming Ideas Into Stunning, High-Performance Websites.
+      <h1 className="xl:text-[200px] text-4xl md:text-4xl lg:text-6xl font-extrabold leading-tight z-50 break-words tracking-tighter">
+        Elevating Asset Aesthetics
       </h1>
       <div ref={ref}>
         <motion.div

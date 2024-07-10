@@ -29,16 +29,17 @@ export default function AlphaPage() {
       <style jsx>{`
         .masked-image-container {
           position: relative;
+          z-index: 1; /* Ensure it's behind the HOME button */
           width: 100%;
           height: 100vh;
           display: flex;
           justify-content: center;
           align-items: center;
           overflow: hidden;
-          perspective: 500px; /* Adds perspective to the container */
+          perspective: 500px;
         }
         .text-mask {
-          font-size: 130vh;
+          font-size: 50vh;
           font-weight: 800;
           letter-spacing: -0.07em;
           color: transparent;
@@ -47,24 +48,34 @@ export default function AlphaPage() {
           background-clip: text;
           display: flex;
           justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          transform: rotateY(20deg) rotateX(42deg) rotateZ(25deg) scale(1.1); /* Crazy perspective effect */
-          transform-style: preserve-3d; /* Ensures the 3D effect is rendered properly */
+          position: relative; /* Ensure z-index is applicable */
+          z-index: 2; /* Adjust as necessary to ensure visibility */
+        }
+        /* Ensure the HOME button is above the masked elements */
+        .bg-black {
+          position: relative;
+          z-index: 50; /* Higher than the masked elements */
         }
       `}</style>
       <div className="masked-image-container">
-        <div className="">
-          <div className="text-mask">UX:UI</div>
-        </div>
+        <div className="text-mask">
+          <div className="flex">
+            <div>UX</div>
+            <div>UI</div>
+          </div>
+        </div>{" "}
+        <Link href="/" rel="preload">
+          <button className="flex hover:bg-white hover:text-black text-white text-4xl font-sans z-50 font-semibold rotate-90">
+            HOME
+          </button>
+        </Link>
       </div>
     </>
   );
 }
 
 {
-  /* <Link h</Link>ref="/" rel="preload">
+  /* <Link h</Link ref="/" rel="preload">
 <button className="bg-black hover:bg-white hover:text-black text-white absolute text-4xl font-sans z-20">
   HOME
 </button>
