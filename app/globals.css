@@ -50,3 +50,19 @@ html[data-scroll-orientation="horizontal"] {
     text-wrap: balance;
   }
 }
+
+.animate-char {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: charIn 0.5s forwards;
+  animation-delay: calc(var(--char-index) * 0.05s);
+  z-index: 50;
+}
+
+@keyframes charIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

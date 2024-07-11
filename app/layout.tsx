@@ -4,9 +4,7 @@ import { Inter } from "next/font/google";
 import { useEffect, useRef } from "react";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./globals.css";
-import useBgColor from "../hooks/useBgColor"; //
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+
 import Head from "next/head";
 import PageTransitionEffect from "@/components/PageTransitionEfffect";
 
@@ -18,13 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const scrollRef = useRef(null);
-  const bgColor = useBgColor();
 
   useEffect(() => {
+    let scroll: any | null;
     // Dynamically import LocomotiveScroll only on the client side
     import("locomotive-scroll").then((LocomotiveScroll) => {
       if (scrollRef.current) {
-        const scroll = new LocomotiveScroll.default({
+        scroll = new LocomotiveScroll.default({
           el: scrollRef.current,
           smooth: true,
         });
@@ -32,12 +30,14 @@ export default function RootLayout({
         new ResizeObserver(() => scroll.update()).observe(
           document.querySelector("[data-scroll-container]") as Element
         );
-
-        return () => {
-          scroll.destroy();
-        };
       }
     });
+
+    return () => {
+      if (scroll) {
+        scroll.destroy();
+      }
+    };
   }, []);
 
   return (
