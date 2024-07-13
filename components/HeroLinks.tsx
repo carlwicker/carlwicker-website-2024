@@ -24,9 +24,9 @@ export default function HeroLinks() {
   };
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="">
       <motion.div
-        className="flex flex-col max-w-min lg:text-3xl text-xl"
+        className="flex flex-col max-w-min lg:text-3xl text-xl uppercase font-semibold tracking-tighter leading-none "
         variants={container}
         initial="hidden"
         animate={isInView ? "show" : "hidden"} // Use isInView to control the animation
@@ -54,7 +54,7 @@ export default function HeroLinks() {
           44 7810 830237
         </motion.a>
 
-        <Link href="/alpha">
+        <Link href="/alpha" target="_top">
           <button className="bg-black hover:text-black hover:bg-white">
             ALPHA
           </button>

@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
-
+import { ReactLenis, useLenis } from "lenis/react";
 import { useContext, useRef } from "react";
 
 function FrozenRouter(props: { children: React.ReactNode }) {
@@ -35,10 +35,10 @@ const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
         animate="enter"
         exit="exit"
         variants={variants}
-        transition={{ type: "linear", duration: 0.25 }}
+        transition={{ type: "linear", duration: 5.75 }}
         className="overflow-hidden"
       >
-        <FrozenRouter>{children}</FrozenRouter>
+        <FrozenRouter>{children}</FrozenRouter>{" "}
       </motion.div>
     </AnimatePresence>
   );

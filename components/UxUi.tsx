@@ -65,7 +65,7 @@ export default function UxUi() {
               <div>UI</div>
             </div>
           </div>
-          <Link href="/" rel="preload">
+          <Link href="/" target="_top">
             <button className="flex hover:bg-white hover:text-black text-white text-4xl font-sans z-50 font-semibold rotate-90">
               HOME
             </button>

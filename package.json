@@ -11,6 +11,7 @@
   "dependencies": {
     "framer-motion": "^11.2.11",
     "gsap": "^3.12.5",
+    "lenis": "^1.1.6",
     "locomotive-scroll": "^4.1.4",
     "next": "^14.2.5",
     "react": "^18",
