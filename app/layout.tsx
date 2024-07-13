@@ -7,7 +7,10 @@ import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import { usePathname } from "next/navigation";
 import ReactLenis from "lenis/react";
 
-const inter = Inter({ subsets: ["latin"], weight: ["200", "400", "900"] });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["200", "400", "500", "600", "900"],
+});
 
 export default function RootLayout({
   children,
