@@ -1,9 +1,11 @@
 import UxUi from "@/components/UxUi";
+import Interstellar from "@/components/interstellar-poster/InterstellarPoster";
 
 export default function AlphaPage({}) {
   return (
-    <main data-scroll-section className="relative text-white">
-      <div className="flex flex-col">
+    <main className="relative text-white">
+      <Interstellar />
+      {/* <div className="flex flex-col">
         <UxUi />
       </div>
       <div className="flex flex-col">
@@ -11,7 +13,7 @@ export default function AlphaPage({}) {
       </div>
       <div className="flex flex-col">
         <UxUi />
-      </div>
+      </div> */}
     </main>
   );
 }

@@ -22,11 +22,11 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <ReactLenis root>
-          <main className={inter.className}>
-            <PageTransitionEffect>{children}</PageTransitionEffect>
-          </main>
-        </ReactLenis>
+        {/* <ReactLenis root> */}
+        <main className={inter.className}>
+          <PageTransitionEffect>{children}</PageTransitionEffect>
+        </main>
+        {/* </ReactLenis> */}
       </body>
     </html>
   );

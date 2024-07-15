@@ -1,6 +1,6 @@
 export default function CyberCortexVideo() {
   const textStyle: any = {
-    backgroundImage: 'url("./jpg/painting2.jpg")', // background
+    backgroundImage: 'url("./webp/painting2.webp  ")', // background
     backgroundSize: "cover",
     WebkitBackgroundClip: "text",
     backgroundClip: "text",

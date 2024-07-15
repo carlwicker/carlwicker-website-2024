@@ -35,10 +35,10 @@ const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
         animate="enter"
         exit="exit"
         variants={variants}
-        transition={{ type: "linear", duration: 5.75 }}
+        transition={{ type: "linear", duration: 0.75 }}
         className="overflow-hidden"
       >
-        <FrozenRouter>{children}</FrozenRouter>{" "}
+        <FrozenRouter>{children}</FrozenRouter>
       </motion.div>
     </AnimatePresence>
   );

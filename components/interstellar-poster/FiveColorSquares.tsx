@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export default function FiveColorSquares() {
   return (
-    <div className="flex">
+    <Link className="flex" href="/">
       <div
         className="h-[30px] w-[30px]"
         style={{ backgroundColor: "rgb(58, 54, 53)" }}
@@ -21,6 +23,6 @@ export default function FiveColorSquares() {
         className="h-[30px] w-[30px]"
         style={{ backgroundColor: "rgb(197, 89, 40)" }}
       ></div>
-    </div>
+    </Link>
   );
 }

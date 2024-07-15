@@ -54,11 +54,19 @@ export default function HeroLinks() {
           44 7810 830237
         </motion.a>
 
-        <Link href="/alpha" target="_top">
-          <button className="bg-black hover:text-black hover:bg-white">
-            ALPHA
-          </button>
-        </Link>
+        <div className="flex gap-5">
+          <Link href="/interstellar">
+            <button className="bg-black hover:text-black hover:bg-white mt-20">
+              INTERSTELLAR
+            </button>
+          </Link>
+
+          <Link href="/uxui">
+            <button className="bg-black hover:text-black hover:bg-white mt-20">
+              UXUI
+            </button>
+          </Link>
+        </div>
       </motion.div>
     </div>
   );

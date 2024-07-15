@@ -38,7 +38,7 @@ export default function UxUi() {
           perspective: 500px;
         }
         .text-mask {
-          font-size: 50vh;
+          font-size: 25vw;
           font-weight: 800;
           letter-spacing: -0.07em;
           color: transparent;
@@ -65,7 +65,7 @@ export default function UxUi() {
               <div>UI</div>
             </div>
           </div>
-          <Link href="/" target="_top">
+          <Link href="/">
             <button className="flex hover:bg-white hover:text-black text-white text-4xl font-sans z-50 font-semibold rotate-90">
               HOME
             </button>

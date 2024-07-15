@@ -25,9 +25,9 @@ export default function Hero() {
       <motion.div
         ref={h1Ref}
         style={{ y }}
-        className="text-[10em] font-bold w-full flex flex-col container tracking-tighter leading-none -mt-[100px] uppercase "
+        className="text-[8vw] font-bold w-full flex flex-col container tracking-tighter leading-none -mt-[100px] uppercase "
       >
-        {heroData?.hero[3]?.title}
+        {heroData?.hero[1]?.title}
       </motion.div>
       <motion.div ref={linksRef} style={{ y }}>
         <HeroLinks />
