@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function CyberCortexVideo() {
   const textStyle: any = {
     backgroundImage: 'url("./webp/painting2.webp  ")', // background
@@ -17,14 +21,14 @@ export default function CyberCortexVideo() {
 
   return (
     <div className="container mx-auto flex justify-center  leading-tight tracking-[-50] w-full  object-cover">
-      <div
-        style={textStyle} // Apply the masking style here
-        className="text-[#111] uppercase lg:text-5xl text-2xl font-extrabold mx-auto -z-50 w-screen  overflow-hidden h-[200vh] "
+      <motion.div
+        style={textStyle}
+        className="text-[#111] uppercase lg:text-5xl text-2xl font-extrabold mx-auto -z-50 w-screen  overflow-hidden h-[200vh] opacity-10"
       >
         cutting-edge technologies and jaw-dropping design catapults user
         experiences into another dimension With a relentless quest for
         perfection
-      </div>
+      </motion.div>
     </div>
   );
 }

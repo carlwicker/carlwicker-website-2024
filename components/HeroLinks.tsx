@@ -24,50 +24,35 @@ export default function HeroLinks() {
   };
 
   return (
-    <div ref={ref} className="">
-      <motion.div
-        className="flex flex-col max-w-min lg:text-3xl text-xl uppercase font-semibold tracking-tighter leading-none "
-        variants={container}
-        initial="hidden"
-        animate={isInView ? "show" : "hidden"} // Use isInView to control the animation
-      >
-        <motion.span
-          variants={child}
-          className={`bg-black hover:text-black hover:bg-white`}
-        >
-          <Link href="/">http://carlwicker.co.uk</Link>
-        </motion.span>
-
-        <motion.a
-          variants={child}
-          className={`bg-black hover:text-black hover:bg-white`}
-          href="mailto:carlwicker@gmail.com"
-        >
-          carlwicker@gmail.com
-        </motion.a>
-
-        <motion.a
-          variants={child}
-          className={`bg-black hover:text-black hover:bg-white`}
-          href="tel:44 7810 830237"
-        >
-          44 7810 830237
-        </motion.a>
-
-        <div className="flex gap-5">
-          <Link href="/interstellar">
-            <button className="bg-black hover:text-black hover:bg-white mt-20">
-              INTERSTELLAR
-            </button>
-          </Link>
-
-          <Link href="/uxui">
-            <button className="bg-black hover:text-black hover:bg-white mt-20">
-              UXUI
-            </button>
-          </Link>
+    <div className="flex gap-10 lg:gap-20 text-md flex-col lg:flex-row font-thin">
+      <div>
+        <div>UX/UI</div>
+        <div className="font-semibold">Adobe Cloud</div>
+        <div className="font-semibold">Figma</div>
+      </div>
+      <div>
+        <div>Front End Development</div>
+        <div className="font-semibold">NextJS</div>
+        <div className="font-semibold">TypeScript</div>
+        <div className="font-semibold">JavaScript</div>
+        <div className="font-semibold">CSS</div>
+      </div>
+      <div>
+        <div>Cloud</div>
+        <div className="font-semibold">Google Cloud Architecture</div>
+        <div className="font-semibold">Vercel Architecture</div>
+      </div>
+      <div>
+        <div>Contact</div>
+        <div className="flex flex-col">
+          <a className="font-semibold" href="mailto:hello@carlwicker.co.uk">
+            hello@carlwicker.co.uk
+          </a>
+          <a className="font-semibold" href="tel:44 7810 830237">
+            44 7810 830237
+          </a>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

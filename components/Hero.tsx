@@ -25,10 +25,11 @@ export default function Hero() {
       <motion.div
         ref={h1Ref}
         style={{ y }}
-        className="text-[8vw] font-bold w-full flex flex-col container tracking-tighter leading-none -mt-[100px] uppercase "
+        className="text-[8vw] py-10 font-semibold w-full flex flex-col container tracking-tighter leading-none -mt-[100px]  "
       >
-        {heroData?.hero[1]?.title}
+        <div className="py-20">Web Developer</div>
       </motion.div>
+
       <motion.div ref={linksRef} style={{ y }}>
         <HeroLinks />
       </motion.div>

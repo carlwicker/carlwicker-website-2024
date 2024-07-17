@@ -1,7 +1,9 @@
+"use client";
+
 import Credits from "./Credits";
-import FiveColorSquares from "./FiveColorSquares";
 import InterstellarHeader from "./InterstellarHeader";
 import InterstellarImage from "./InterstellarImage";
+import { motion } from "framer-motion";
 
 export default function InterstellarPoster() {
   return (
@@ -14,13 +16,21 @@ export default function InterstellarPoster() {
     >
       <div className="container mx-auto pt-10 px-5">
         <InterstellarHeader />
-        <Credits />
-        <h1
+
+        <motion.div
+          whileInView={{ opacity: 1, transition: { duration: 1 } }}
+          style={{ opacity: 0.6 }}
+        >
+          <Credits />
+        </motion.div>
+
+        <motion.h1
           className="md:text-[15vw] tracking-[-0.1em] leading-[0.8em] md:py-20 text-[20vw] py-5"
-          style={{ fontWeight: "600" }}
+          whileInView={{ opacity: 1, transition: { duration: 1 } }}
+          style={{ opacity: 0.6, fontWeight: "600" }}
         >
           Interstellar
-        </h1>
+        </motion.h1>
       </div>
       <InterstellarImage />
     </div>
