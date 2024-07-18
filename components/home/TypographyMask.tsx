@@ -1,8 +1,6 @@
-"use client";
-
 import { motion } from "framer-motion";
 
-export default function CyberCortexVideo() {
+export default function TypographyMask() {
   const textStyle: any = {
     backgroundImage: 'url("./webp/painting2.webp  ")', // background
     backgroundSize: "cover",

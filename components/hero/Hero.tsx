@@ -1,8 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import heroData from "../json/hero.json";
-import SplitType from "split-type";
+import { useRef } from "react";
 import HeroLinks from "./HeroLinks";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -14,11 +12,7 @@ export default function Hero() {
 
   // Use Framer Motion's useTransform hook to interpolate the scroll value into a translateY value
   // Adjust the output range (-50, 0) to control the speed and direction of the parallax effect
-  const y = useTransform(scrollY, [0, 1000], [100, 0]);
-
-  const randomNumBetween = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  };
+  const y = useTransform(scrollY, [0, -100], [100, 0]);
 
   return (
     <div className="container mx-auto flex min-h-screen flex-col justify-center p-5 ">
@@ -30,7 +24,7 @@ export default function Hero() {
         <div className="py-20">Web Developer</div>
       </motion.div>
 
-      <motion.div ref={linksRef} style={{ y }}>
+      <motion.div ref={linksRef}>
         <HeroLinks />
       </motion.div>
     </div>
