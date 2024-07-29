@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from "@/components/footer/Footer";
 import Hero from "@/components/hero/Hero";
 import ScrollBlock from "@/components/ScrollBlock";
