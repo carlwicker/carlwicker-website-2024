@@ -4,8 +4,9 @@ import React, { useEffect, useRef } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all"; // Import ScrollTrigger from the correct path
+import { motion } from "framer-motion";
 
-export default function FadeComp() {
+export default function SplitTypeTest() {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,18 +23,19 @@ export default function FadeComp() {
       gsap.from(text.lines, {
         scrollTrigger: {
           trigger: textRef.current,
-          start: "top 80%",
+          start: "top bottom",
           end: "top 30%",
           scrub: true,
           toggleActions: "restart none none none",
         },
         opacity: 0,
+        x: 400,
         stagger: {
           from: "start",
-          each: 0.125,
+          each: 0.25,
           ease: "none",
         },
-        duration: 2,
+        duration: 1,
       });
     }
   }, [textRef]);
@@ -44,7 +46,7 @@ export default function FadeComp() {
         id="text"
         className="container mx-auto p-5 text-[5vw] tracking-tighter leading-none lg:text-[3vw] text-white "
       >
-        <div ref={textRef}>
+        <motion.div ref={textRef}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quo
           fuga, commodi earum, ut deleniti aperiam nobis natus odio distinctio
           pariatur qui eius atque illum esse quae ipsa eligendi tempore?
@@ -52,7 +54,7 @@ export default function FadeComp() {
           nobis odio aut, architecto recusandae perspiciatis enim totam
           exercitationem, quisquam corporis ab, vel aliquid! Ullam, architecto.
           Quam soluta nulla ducimus vitae?
-        </div>
+        </motion.div>
       </div>
     </div>
   );
