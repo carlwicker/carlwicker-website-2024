@@ -6,6 +6,9 @@ import "./globals.css";
 import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import { usePathname } from "next/navigation";
 import ReactLenis from "lenis/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,11 +25,11 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        {/* <ReactLenis root> */}
-        <main className={inter.className}>
-          <PageTransitionEffect>{children}</PageTransitionEffect>
-        </main>
-        {/* </ReactLenis> */}
+        <ReactLenis root>
+          <main className={inter.className}>
+            <PageTransitionEffect>{children}</PageTransitionEffect>
+          </main>
+        </ReactLenis>
       </body>
     </html>
   );

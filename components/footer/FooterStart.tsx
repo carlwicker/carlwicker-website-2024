@@ -33,7 +33,7 @@ export default function FooterStart() {
   return (
     <div ref={ref}>
       <motion.div
-        className="flex flex-col text-md"
+        className="flex flex-col text-xs font-thin"
         variants={container}
         initial="hidden"
         animate={isInView ? "show" : "hidden"} // Use isInView to control the animation
