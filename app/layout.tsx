@@ -6,9 +6,6 @@ import "./globals.css";
 import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import { usePathname } from "next/navigation";
 import ReactLenis from "lenis/react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect } from "react";
 
 const inter = Inter({
   subsets: ["latin"],
