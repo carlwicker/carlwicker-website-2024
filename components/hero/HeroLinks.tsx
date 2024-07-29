@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 export default function HeroLinks() {
   const ref = useRef<HTMLDivElement>(null);
@@ -12,22 +12,15 @@ export default function HeroLinks() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.125, // Stagger the animation of children by 0.1 second
+        staggerChildren: 0.125,
       },
     },
   };
 
-  // Variants for each child (span)
   const childVariants = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   };
-
-  useEffect(() => {
-    if (isInView) {
-      console.log("In view");
-    }
-  }, [isInView]);
 
   return (
     <motion.div className="flex gap-10 lg:gap-20 text-xs flex-col lg:flex-row font-thin">
