@@ -20,7 +20,6 @@ export default function FadeComp() {
       gsap.set(textRef.current, { visibility: "visible" });
 
       gsap.from(text.lines, {
-        scrub: true,
         scrollTrigger: {
           trigger: textRef.current,
           start: "top 80%",

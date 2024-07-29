@@ -1,24 +1,33 @@
-import { delay, motion, useInView } from "framer-motion";
-import { useRef } from "react";
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 
 export default function HeroLinks() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // `once: true` ensures the animation only plays once
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false });
 
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
+        staggerChildren: 0.125, // Stagger the animation of children by 0.1 second
       },
     },
   };
 
+  // Variants for each child (span)
   const childVariants = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   };
+
+  useEffect(() => {
+    if (isInView) {
+      console.log("In view");
+    }
+  }, [isInView]);
 
   return (
     <motion.div className="flex gap-10 lg:gap-20 text-xs flex-col lg:flex-row font-thin">
@@ -26,7 +35,7 @@ export default function HeroLinks() {
         ref={ref}
         variants={containerVariants}
         initial="hidden"
-        animate="show"
+        animate={isInView ? "show" : "hidden"}
       >
         <motion.div variants={childVariants}>UX/UI</motion.div>
         <motion.div className="font-semibold" variants={childVariants}>
@@ -70,14 +79,12 @@ export default function HeroLinks() {
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
       >
-        <motion.div>
-          <motion.div variants={childVariants}>Cloud</motion.div>
-          <motion.div variants={childVariants} className="font-semibold">
-            Google Cloud Architecture
-          </motion.div>
-          <motion.div variants={childVariants} className="font-semibold">
-            Vercel Architecture
-          </motion.div>
+        <motion.div variants={childVariants}>Cloud</motion.div>
+        <motion.div variants={childVariants} className="font-semibold">
+          Google Cloud Architecture
+        </motion.div>
+        <motion.div variants={childVariants} className="font-semibold">
+          Vercel Architecture
         </motion.div>
       </motion.div>
 

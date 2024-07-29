@@ -1,35 +1,27 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 
 export default function FooterEnd() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false }); // `once: true` ensures the animation only plays once
+  const isInView = useInView(ref, { once: false });
 
-  // Variants for the container to stagger the children animation
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12, // Stagger the animation of children by 0.1 second
+        staggerChildren: 0.12,
       },
     },
   };
 
-  // Variants for each child (span)
   const child = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   };
-
-  useEffect(() => {
-    if (isInView) {
-      // Trigger the animation when the component is in view
-    }
-  }, [isInView]);
 
   return (
     <div ref={ref}>
@@ -43,15 +35,11 @@ export default function FooterEnd() {
           <Link href="/">http://carlwicker.co.uk</Link>
         </motion.span>
 
-        <motion.a
-          variants={child}
-          className={` `}
-          href="mailto:carlwicker@gmail.com"
-        >
+        <motion.a variants={child} href="mailto:carlwicker@gmail.com">
           carlwicker@gmail.com
         </motion.a>
 
-        <motion.a variants={child} className={` `} href="tel:44 7810 830237">
+        <motion.a variants={child} href="tel:44 7810 830237">
           44 7810 830237
         </motion.a>
       </motion.div>
