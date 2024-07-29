@@ -26,7 +26,7 @@ export default function HeroLinks() {
         ref={ref}
         variants={containerVariants}
         initial="hidden"
-        animate={isInView ? "show" : "hidden"}
+        animate="show"
       >
         <motion.div variants={childVariants}>UX/UI</motion.div>
         <motion.div className="font-semibold" variants={childVariants}>
