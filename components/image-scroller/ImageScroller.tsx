@@ -2,8 +2,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export default function ImageScroller() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll(scrollRef || undefined);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll(scrollRef);
 
   const x = useTransform(scrollYProgress, [0.5, 1], ["0vw", "-100vw"]);
 
