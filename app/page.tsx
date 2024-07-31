@@ -2,6 +2,7 @@
 
 import Footer from "@/components/footer/Footer";
 import Hero from "@/components/hero/Hero";
+import ImageScroller from "@/components/image-scroller/ImageScroller";
 import ScrollBlock from "@/components/ScrollBlock";
 import SplitTypeTest from "@/components/split-type-test/SplitTypeTest";
 
@@ -15,9 +16,10 @@ export default function Home() {
         </div>
 
         <SplitTypeTest />
-        <div className="flex rotate-180">
+        {/* <div className="flex rotate-180">
           <ScrollBlock />
-        </div>
+        </div> */}
+        <ImageScroller />
         <Footer />
       </div>
     </main>
