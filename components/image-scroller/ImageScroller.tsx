@@ -1,36 +1,51 @@
-import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ImageScroller() {
-  const scrollRef = useRef(null);
-  const { scrollYProgress } = useScroll();
-
-  const x = useTransform(scrollYProgress, [0.5, 1], ["0vw", "-100vw"]);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log(x);
-  }, [x]);
+    if (scrollRef.current) {
+      gsap.to(scrollRef.current, {
+        x: "-100vw",
+        ease: "none",
+
+        scrollTrigger: {
+          trigger: scrollRef.current,
+          start: "top top",
+          end: "100% 0%",
+          scrub: true,
+
+          markers: true,
+        },
+      });
+    }
+  }, []);
 
   return (
-    <motion.div
+    <div
+      className="h-[100vh] w-[200vw] flex flex-row overflow-y-hidden"
       ref={scrollRef}
-      className="h-[200vh] w-[200vw]  flex flex-row"
-      style={{ x: x }}
     >
-      <motion.div
-        className="h-[200vh] bg-green-800 w-[100vw]"
+      <div
+        className="h-[100vh] bg-green-800 w-[100vw]"
         style={{
           backgroundImage: "url(./webp/painting2.webp)",
           backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
-      ></motion.div>
-      <motion.div
-        className="h-[200vh] bg-blue-800 w-[100vw]"
+      ></div>
+      <div
+        className="h-[100vh] bg-blue-800 w-[100vw]"
         style={{
           backgroundImage: "url(./webp/interstellar.webp)",
           backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
-      ></motion.div>
-    </motion.div>
+      ></div>
+    </div>
   );
 }

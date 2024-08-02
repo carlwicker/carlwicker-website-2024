@@ -47,13 +47,12 @@ export default function SplitTypeTest() {
         className="container mx-auto p-5 text-[5vw] tracking-tighter leading-none lg:text-[3vw] text-white "
       >
         <motion.div ref={textRef}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quo
-          fuga, commodi earum, ut deleniti aperiam nobis natus odio distinctio
-          pariatur qui eius atque illum esse quae ipsa eligendi tempore?
-          Mollitia voluptatem nostrum at neque doloremque ipsam labore quis
-          nobis odio aut, architecto recusandae perspiciatis enim totam
-          exercitationem, quisquam corporis ab, vel aliquid! Ullam, architecto.
-          Quam soluta nulla ducimus vitae?
+          Delivering cutting-edge UI animations, I transform static designs into
+          captivating interactive experiences using CSS, JavaScript, GSAP, and
+          Framer Motion. With a keen eye for detail and a passion for
+          performance optimization, I elevate user engagement, bringing
+          interfaces to life with seamless, dynamic motion and unrivaled
+          precision.
         </motion.div>
       </div>
     </div>

@@ -16,10 +16,9 @@ export default function Home() {
         </div>
 
         <SplitTypeTest />
-        {/* <div className="flex rotate-180">
-          <ScrollBlock />
-        </div> */}
+
         <ImageScroller />
+        <SplitTypeTest />
         <Footer />
       </div>
     </main>

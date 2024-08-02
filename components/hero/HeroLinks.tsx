@@ -59,6 +59,12 @@ export default function HeroLinks() {
           JavaScript
         </motion.div>
         <motion.div variants={childVariants} className="font-semibold">
+          GSAP
+        </motion.div>
+        <motion.div variants={childVariants} className="font-semibold">
+          Framer Motion
+        </motion.div>
+        <motion.div variants={childVariants} className="font-semibold">
           TailwindCSS
         </motion.div>
         <motion.div variants={childVariants} className="font-semibold">
