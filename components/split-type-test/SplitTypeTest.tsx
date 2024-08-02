@@ -25,7 +25,7 @@ export default function SplitTypeTest() {
           trigger: textRef.current,
           start: "top bottom",
           end: "top 30%",
-          scrub: true,
+          scrub: 1,
           toggleActions: "restart none none none",
         },
         opacity: 0,
@@ -41,7 +41,7 @@ export default function SplitTypeTest() {
   }, [textRef]);
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-red-800">
+    <div className="w-full h-screen flex justify-center items-center bg-black">
       <div
         id="text"
         className="container mx-auto p-5 text-[5vw] tracking-tighter leading-none lg:text-[3vw] text-white "

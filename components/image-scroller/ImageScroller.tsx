@@ -16,8 +16,8 @@ export default function ImageScroller() {
         scrollTrigger: {
           trigger: scrollRef.current,
           start: "top top",
-          end: "100% 0%",
-          scrub: true,
+          end: "+=100vh",
+          scrub: 1,
 
           markers: true,
         },
