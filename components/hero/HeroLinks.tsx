@@ -98,9 +98,9 @@ export default function HeroLinks() {
           <motion.div variants={childVariants} className="flex flex-col">
             <a
               className="font-semibold hover:text-red-600  transition-all"
-              href="mailto:hello@carlwicker.co.uk"
+              href="mailto:carlwicker@gmail.com"
             >
-              hello@carlwicker.co.uk
+              carlwicker@gmail.com
             </a>
             <a
               className="font-semibold hover:text-red-600  transition-all"
