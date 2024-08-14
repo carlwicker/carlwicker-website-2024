@@ -19,7 +19,7 @@ export default function Hero() {
       <motion.div
         ref={h1Ref}
         style={{ y }}
-        className="text-[10vw] py-10 font-semibold w-full flex flex-col container tracking-tighter leading-none -mt-[100px]  "
+        className="text-[8vw] py-10 font-semibold w-full flex flex-col container tracking-tighter leading-none -mt-[100px]  "
       >
         <div className="py-20">Web Developer Specialising In UI Animation</div>
       </motion.div>

@@ -26,7 +26,7 @@ export default function FooterEnd() {
   return (
     <div ref={ref}>
       <motion.div
-        className="flex flex-col text-xs font-thin"
+        className="flex flex-col text-xs font-thin "
         variants={container}
         initial="hidden"
         animate={isInView ? "show" : "hidden"} // Use isInView to control the animation

@@ -23,12 +23,13 @@ export default function HeroLinks() {
   };
 
   return (
-    <motion.div className="flex gap-10 lg:gap-20 text-xs flex-col lg:flex-row font-thin">
+    <motion.div className="flex gap-10 lg:gap-0 text-xs flex-col lg:flex-row font-thin">
       <motion.div
         ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
+        className="lg:w-3/12"
       >
         <motion.div variants={childVariants}>UX/UI</motion.div>
         <motion.div className="font-semibold" variants={childVariants}>
@@ -44,6 +45,7 @@ export default function HeroLinks() {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
+        className="lg:w-3/12"
       >
         <motion.div variants={childVariants}>Front End Development</motion.div>
         <motion.div variants={childVariants} className="font-semibold">
@@ -77,6 +79,7 @@ export default function HeroLinks() {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
+        className="lg:w-3/12"
       >
         <motion.div variants={childVariants}>Cloud</motion.div>
         <motion.div variants={childVariants} className="font-semibold">
@@ -92,6 +95,7 @@ export default function HeroLinks() {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
+        className="lg:w-3/12"
       >
         <motion.div>
           <motion.div variants={childVariants}>Contact</motion.div>

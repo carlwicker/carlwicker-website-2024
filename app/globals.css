@@ -25,13 +25,13 @@
 }
 body {
   background-color: black;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+  /* scroll-behavior: smooth; */
+  /* scrollbar-width: none; */
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 img {
   max-width: 100%; /* Ensures image is responsive but does not warp dimensions */

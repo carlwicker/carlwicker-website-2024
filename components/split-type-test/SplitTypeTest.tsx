@@ -3,14 +3,13 @@
 import React, { useEffect, useRef } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all"; // Import ScrollTrigger from the correct path
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 
-export default function SplitTypeTest() {
+export default function SplitTypeTest({ scrollY }: { scrollY: number }) {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Register the ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
   }, []);
 
@@ -30,6 +29,7 @@ export default function SplitTypeTest() {
         },
         opacity: 0,
         x: 400,
+
         stagger: {
           from: "start",
           each: 0.25,
@@ -41,10 +41,10 @@ export default function SplitTypeTest() {
   }, [textRef]);
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-black">
+    <div className="w-full h-fit flex justify-center items-center bg-black">
       <div
         id="text"
-        className="container mx-auto p-5 text-[5vw] tracking-tighter leading-none lg:text-[3vw] text-white "
+        className="container mx-auto p-5 text-[8vw] tracking-tighter leading-none lg:text-[4vw] text-white py-40"
       >
         <motion.div ref={textRef}>
           Delivering cutting-edge UI animations, I transform static designs into
