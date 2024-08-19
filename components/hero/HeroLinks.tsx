@@ -23,9 +23,11 @@ export default function HeroLinks() {
   };
 
   return (
-    <motion.div className="flex gap-10 lg:gap-0 text-xs flex-col lg:flex-row font-thin">
+    <motion.div
+      className="flex gap-10 lg:gap-0 text-xs flex-col lg:flex-row font-thin"
+      ref={ref}
+    >
       <motion.div
-        ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
