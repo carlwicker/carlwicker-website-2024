@@ -6,6 +6,7 @@ import Hero from "@/components/hero/Hero";
 import ImageScroller from "@/components/image-scroller/ImageScroller";
 import SplitTypeTest from "@/components/split-type-test/SplitTypeTest";
 import Ticker from "@/components/ticker/Ticker";
+import Video from "@/components/video/Video";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -24,13 +25,11 @@ export default function Home() {
 
   return (
     <main className="text-white">
-      {/* <div style={{ position: "fixed", top: 0, left: 0 }}>
-        Scroll Position: {scrollY}
-      </div> */}
       <Hero />
-      <Ticker scrollY={scrollY} />
+      {/* <Ticker color={"white"} /> */}
+      <Video />
       <ImageScroller />
-      <SplitTypeTest scrollY={scrollY} />
+      <SplitTypeTest scrollY={scrollY} /> <Ticker color={"#111"} />
       <Footer />
     </main>
   );
