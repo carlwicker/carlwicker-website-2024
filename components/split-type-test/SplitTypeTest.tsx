@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 
-export default function SplitTypeTest({ scrollY }: { scrollY: number }) {
+export default function SplitTypeTest() {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

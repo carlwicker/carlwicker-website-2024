@@ -10,7 +10,7 @@ const Ticker = ({ color }: { color: string }) => {
   useEffect(() => {
     const animateTicker = () => {
       if (tickerRef.current) {
-        const tickerWidth = tickerRef.current.offsetWidth;
+        const tickerWidth = tickerRef.current.offsetWidth - window.innerWidth;
 
         gsap.to(tickerRef.current, {
           x: -tickerWidth,
@@ -47,15 +47,14 @@ const Ticker = ({ color }: { color: string }) => {
     >
       <div
         ref={tickerRef}
-        className="text-[7vw] text-nowrap font-bold uppercase p-0  m-0 flex gap-0 transform"
+        className="text-[49vw] text-nowrap font-bold uppercase p-0  m-0 flex gap-0"
         style={{
           display: "inline-block",
-          fontSize: "19vw",
-          lineHeight: "18vw",
-          height: "19vw",
+          fontSize: "49vw",
+          lineHeight: "48vw",
+          height: "49vw",
           width: "content",
           color: color,
-          transform: "skew(10deg) translateY(90deg)",
         }}
       >
         ReactJS//NextJS//TypeScript//JavaScript//GSAP//Framer

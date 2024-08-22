@@ -10,10 +10,10 @@ export default function Video() {
   useEffect(() => {
     if (videoRef.current) {
       const video = videoRef.current;
-      const duration = video.duration;
+      const duration = video.duration || 0;
 
       gsap.to(video, {
-        currentTime: duration,
+        currentTime: duration || 0,
         ease: "none",
         scrollTrigger: {
           trigger: video,

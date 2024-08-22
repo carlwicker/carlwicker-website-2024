@@ -20,7 +20,7 @@ export default function RootLayout({
   const pathname = usePathname();
 
   return (
-    <html>
+    <html style={{ overflow: "hidden" }}>
       <body>
         <ReactLenis root>
           <main className={inter.className}>
