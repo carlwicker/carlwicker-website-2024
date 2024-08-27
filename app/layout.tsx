@@ -6,6 +6,7 @@ import "./globals.css";
 import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import { usePathname } from "next/navigation";
 import ReactLenis from "lenis/react";
+import Head from "next/head";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,13 +21,14 @@ export default function RootLayout({
   const pathname = usePathname();
 
   return (
-    <html style={{ overflow: "hidden" }}>
+    <html>
       <body>
-        <ReactLenis root>
-          <main className={inter.className}>
-            <PageTransitionEffect>{children}</PageTransitionEffect>
-          </main>
-        </ReactLenis>
+        {/* <ReactLenis root> */}
+        <main className={`${inter.className} overflow-x-hidden`}>
+          {/* <PageTransitionEffect></PageTransitionEffect> */}
+          {children}
+        </main>
+        {/* </ReactLenis> */}
       </body>
     </html>
   );

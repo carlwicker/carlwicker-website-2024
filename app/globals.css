@@ -16,6 +16,9 @@
   }
 }
 
+* {
+}
+
 .image-container {
   display: flex;
   justify-content: center;
@@ -23,6 +26,7 @@
   height: 100vh; /* Full height of the viewport */
   width: 100vw; /* Full width of the viewport */
 }
+
 body {
   background-color: black;
   /* scroll-behavior: smooth; */
@@ -85,10 +89,10 @@ img {
   scale: 1;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
 }
 
 *::-webkit-scrollbar {
   display: none;
-}
+} */

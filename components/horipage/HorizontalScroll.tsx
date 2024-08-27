@@ -1,66 +1,45 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const HorizontalScroll = () => {
+const Scroll = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const horizontalSection = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const container = containerRef.current;
-
-    if (container) {
-      gsap.to(container, {
-        x: () => -(container.scrollWidth - window.innerWidth),
-        ease: "none",
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: () => `+=${container.scrollWidth - window.innerWidth}`,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-          markers: true,
-        },
-      });
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(containerRef.current, {
+      x: () => -(horizontalSection.current.offsetWidth - window.innerWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: () => `+=${horizontalSection.current.offsetWidth}`,
+        scrub: 1,
+        pin: containerRef.current,
+      },
+    });
+    scrollTrigger: {
+      pin: true;
     }
-
-    return () => {
-      if (container) {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      }
-    };
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        display: "flex",
-        overflow: "hidden",
-        height: "100vh",
-        width: "400vw",
-      }}
-    >
-      <div style={{ width: "100vw", height: "100vh", backgroundColor: "red" }}>
-        Section 1
-      </div>
-      <div style={{ width: "100vw", height: "100vh", backgroundColor: "blue" }}>
-        Section 2
-      </div>
+    <div className="flex w-[400vw]" ref={containerRef}>
       <div
-        style={{ width: "100vw", height: "100vh", backgroundColor: "green" }}
+        className="flex w-[400vw] h-[100vh] bg-red-400"
+        ref={horizontalSection}
       >
-        Section 3
-      </div>
-      <div
-        style={{ width: "100vw", height: "100vh", backgroundColor: "yellow" }}
-      >
-        Section 4
+        <div className="w-[100vw] h-[100vh] bg-red-400"></div>
+        <div className="w-[100vw] h-[100vh] bg-blue-400"></div>
+        <div className="w-[100vw] h-[100vh] bg-green-400"></div>
+        <div className="w-[100vw] h-[100vh] bg-yellow-400"></div>
       </div>
     </div>
   );
 };
 
-export default HorizontalScroll;
+export default Scroll;

@@ -29,7 +29,6 @@ export default function SplitTypeTest() {
         },
         opacity: 0,
         x: 400,
-
         stagger: {
           from: "start",
           each: 0.25,
