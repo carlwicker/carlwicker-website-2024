@@ -12,12 +12,12 @@ const Scroll = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(containerRef.current, {
-      x: () => -(horizontalSection.current.offsetWidth - window.innerWidth),
+      x: () => -(horizontalSection.current!.offsetWidth - window.innerWidth),
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: () => `+=${horizontalSection.current.offsetWidth}`,
+        end: () => `+=${horizontalSection.current!.offsetWidth}`,
         scrub: 1,
         pin: containerRef.current,
       },
