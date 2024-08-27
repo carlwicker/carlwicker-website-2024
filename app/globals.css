@@ -16,9 +16,6 @@
   }
 }
 
-* {
-}
-
 .image-container {
   display: flex;
   justify-content: center;
@@ -29,13 +26,9 @@
 
 body {
   background-color: black;
-  /* scroll-behavior: smooth; */
-  /* scrollbar-width: none; */
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
-
-/* body::-webkit-scrollbar {
-  display: none;
-} */
 
 img {
   max-width: 100%; /* Ensures image is responsive but does not warp dimensions */
@@ -89,10 +82,10 @@ img {
   scale: 1;
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 
 *::-webkit-scrollbar {
   display: none;
-} */
+}

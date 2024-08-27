@@ -18,7 +18,7 @@ export default function Home() {
 
       {/* <ImageScroller /> */}
 
-      {/* <SplitTypeTest /> */}
+      <SplitTypeTest />
 
       {/* <Ticker color={"#111"} /> */}
       <div className="w-full">

@@ -22,13 +22,10 @@ const Scroll = () => {
         pin: containerRef.current,
       },
     });
-    scrollTrigger: {
-      pin: true;
-    }
   }, []);
 
   return (
-    <div className="flex w-[400vw]" ref={containerRef}>
+    <div ref={containerRef}>
       <div
         className="flex w-[400vw] h-[100vh] bg-red-400"
         ref={horizontalSection}

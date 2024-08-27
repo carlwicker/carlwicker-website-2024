@@ -23,12 +23,12 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        {/* <ReactLenis root> */}
-        <main className={`${inter.className} overflow-x-hidden`}>
-          {/* <PageTransitionEffect></PageTransitionEffect> */}
-          {children}
-        </main>
-        {/* </ReactLenis> */}
+        <ReactLenis root>
+          <main className={`${inter.className} overflow-x-hidden`}>
+            {/* <PageTransitionEffect></PageTransitionEffect> */}
+            {children}
+          </main>
+        </ReactLenis>
       </body>
     </html>
   );
