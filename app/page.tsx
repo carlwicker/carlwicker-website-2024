@@ -21,9 +21,9 @@ export default function Home() {
       <SplitTypeTest />
 
       {/* <Ticker color={"#111"} /> */}
-      <div className="w-full">
+      {/* <div className="w-full">
         <HorizontalScroll />
-      </div>
+      </div> */}
 
       <Footer />
     </main>

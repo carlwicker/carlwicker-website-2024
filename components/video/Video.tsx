@@ -23,8 +23,7 @@ export default function Video() {
           //   markers: true,
           onUpdate: (self) => {
             const progress = self.progress;
-            video.style.width = `${50 + progress * 50}%`; // Animate width from 50% to 100%
-            video.style.height = `${50 + progress * 50}%`; // Animate height from 50% to 100%
+            video.style.opacity = `${0 + progress * 100}%`;
           },
         },
       });
@@ -32,10 +31,10 @@ export default function Video() {
   }, []);
 
   return (
-    <div className="flex align-middle justify-center py-40">
+    <div className="flex justify-center">
       <video
         ref={videoRef}
-        className="w-full h-fit object-fit"
+        className="w-full h-fit object-fit self-center"
         src="/webm/cybercortex.webm"
         muted
       />

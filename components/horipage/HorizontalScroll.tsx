@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Video from "../video/Video";
 
 const Scroll = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,14 +27,13 @@ const Scroll = () => {
 
   return (
     <div ref={containerRef}>
-      <div
-        className="flex w-[400vw] h-[100vh] bg-red-400"
-        ref={horizontalSection}
-      >
-        <div className="w-[100vw] h-[100vh] bg-red-400"></div>
-        <div className="w-[100vw] h-[100vh] bg-blue-400"></div>
-        <div className="w-[100vw] h-[100vh] bg-green-400"></div>
-        <div className="w-[100vw] h-[100vh] bg-yellow-400"></div>
+      <div className="flex w-fit" ref={horizontalSection}>
+        <div className="w-screen h-screen">
+          <Video />
+        </div>
+        <div className="w-screen h-screen bg-blue-400"></div>
+        <div className="w-screen h-screen bg-green-400"></div>
+        <div className="w-screen h-screen bg-yellow-400"></div>
       </div>
     </div>
   );
