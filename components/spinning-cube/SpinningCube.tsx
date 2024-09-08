@@ -1,16 +1,20 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { useScroll } from "framer-motion";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export default function SpinningCube() {
-  const mountRef = useRef<any>(null);
-  const { scrollYProgress } = useScroll() as any; // Get scroll progress
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 }); // Track mouse position
+  const mountRef = useRef<HTMLDivElement | null>(null);
+  const donutRefs = useRef<THREE.Mesh<THREE.TorusGeometry>[]>([]);
 
   useEffect(() => {
-    // Scene setup
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -18,38 +22,131 @@ export default function SpinningCube() {
       0.1,
       1000
     );
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    mountRef.current.appendChild(renderer.domElement);
+    if (mountRef.current) {
+      mountRef.current.appendChild(renderer.domElement);
+    }
 
-    // Cube setup
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: "red" });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    // Add lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+    scene.add(ambientLight);
 
+    const redPointLight = new THREE.PointLight(0xff0000, 2, 50); // Red point light to enhance glow
+    redPointLight.position.set(5, 5, 5);
+    scene.add(redPointLight);
+
+    const greenPointLight = new THREE.PointLight(0x00ff00, 2, 50); // Green point light to enhance glow
+    greenPointLight.position.set(-5, 5, 5);
+    scene.add(greenPointLight);
+
+    const bluePointLight = new THREE.PointLight(0x0000ff, 2, 50); // Blue point light to enhance glow
+    bluePointLight.position.set(0, 5, 5); // Adjusted position
+    scene.add(bluePointLight);
+
+    // Create a red donut with a specific color and opacity
+    const redGeometry = new THREE.TorusGeometry(1, 0.4, 16, 100);
+    const redMaterial = new THREE.MeshStandardMaterial({
+      color: 0xff0000,
+      emissive: 0xff0000, // Red emissive color for glow effect
+      emissiveIntensity: 1,
+      side: THREE.DoubleSide,
+      transparent: false,
+      opacity: 0.25,
+    });
+    const redDonut = new THREE.Mesh(redGeometry, redMaterial);
+    scene.add(redDonut);
+    donutRefs.current.push(redDonut);
+
+    // Create a green donut with a specific color and opacity
+    const greenGeometry = new THREE.TorusGeometry(1, 0.4, 16, 100);
+    const greenMaterial = new THREE.MeshStandardMaterial({
+      color: 0x00ff00,
+      emissive: 0x00ff00, // Green emissive color for glow effect
+      emissiveIntensity: 1,
+      side: THREE.DoubleSide,
+      transparent: false,
+      opacity: 0.25,
+    });
+    const greenDonut = new THREE.Mesh(greenGeometry, greenMaterial);
+    greenDonut.position.x = 2; // Offset the green donut to avoid overlap
+    scene.add(greenDonut);
+    donutRefs.current.push(greenDonut);
+
+    // Create a blue donut with a specific color and opacity
+    const blueGeometry = new THREE.TorusGeometry(1, 0.4, 16, 100);
+    const blueMaterial = new THREE.MeshStandardMaterial({
+      color: 0x0000ff,
+      emissive: 0x0000ff, // Blue emissive color for glow effect
+      emissiveIntensity: 1,
+      side: THREE.DoubleSide,
+      transparent: false,
+      opacity: 0.25,
+    });
+    const blueDonut = new THREE.Mesh(blueGeometry, blueMaterial);
+    blueDonut.position.x = -2; // Offset the blue donut to avoid overlap
+    scene.add(blueDonut);
+    donutRefs.current.push(blueDonut);
+
+    // Position the camera
     camera.position.z = 5;
 
-    // Mouse move event listener
-    const onDocumentMouseMove = (event: any) => {
-      event.preventDefault();
-      setMousePosition({
-        x: (event.clientX / window.innerWidth) * 2 - 1,
-        y: -(event.clientY / window.innerHeight) * 2 + 1,
+    // Set up OrbitControls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = false; // Enable damping (inertia)
+    controls.dampingFactor = 0.25; // Damping factor
+    controls.screenSpacePanning = false; // Disable screen space panning
+    controls.maxPolarAngle = Math.PI / 2; // Limit vertical rotation
+
+    // Set up post-processing
+    const composer = new EffectComposer(renderer);
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+
+    const bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(window.innerWidth, window.innerHeight),
+      1.5, // strength
+      0.4, // radius
+      0.15 // threshold
+    );
+    composer.addPass(bloomPass);
+
+    // Raycaster for detecting mouse hover
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    const handleMouseMove = (event: MouseEvent) => {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(donutRefs.current);
+
+      donutRefs.current.forEach((donut) => {
+        if (intersects.find((intersect) => intersect.object === donut)) {
+          (donut.material as THREE.MeshStandardMaterial).emissiveIntensity = 5;
+        } else {
+          (donut.material as THREE.MeshStandardMaterial).emissiveIntensity = 3;
+        }
       });
     };
-    document.addEventListener("mousemove", onDocumentMouseMove);
+
+    window.addEventListener("mousemove", handleMouseMove);
 
     // Animation loop
-    const animate = function () {
+    const animate = () => {
       requestAnimationFrame(animate);
 
-      cube.rotation.x -= mousePosition.x;
-      cube.rotation.y -= mousePosition.y;
-      cube.scale.x = scrollYProgress?.current * 4.5;
-      cube.scale.y = scrollYProgress?.current * 4.5;
+      // Rotate the donuts on the x-axis only
+      donutRefs.current.forEach((donut) => {
+        donut.rotation.y += 0.01;
+      });
 
-      renderer.render(scene, camera);
+      // Update controls
+      controls.update();
+
+      // Render the scene with bloom effect
+      composer.render();
     };
 
     animate();
@@ -59,16 +156,20 @@ export default function SpinningCube() {
       renderer.setSize(window.innerWidth, window.innerHeight);
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
+      composer.setSize(window.innerWidth, window.innerHeight);
     };
 
     window.addEventListener("resize", handleResize);
 
+    // Clean up on component unmount
     return () => {
-      document.removeEventListener("mousemove", onDocumentMouseMove);
       window.removeEventListener("resize", handleResize);
-      mountRef.current.removeChild(renderer.domElement);
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (mountRef.current) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
     };
-  }, [scrollYProgress]); // Add scrollYProgress as a dependency
+  }, []);
 
   return <div ref={mountRef} className="m-0 p-0 flex-1"></div>;
 }

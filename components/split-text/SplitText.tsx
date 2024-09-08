@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 
-export default function SplitTypeTest() {
+export default function SplitText() {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function SplitTypeTest() {
   }, [textRef]);
 
   return (
-    <div className="w-full h-fit flex justify-center items-center bg-black">
+    <div className="w-full h-fit flex justify-center items-center">
       <div
         id="text"
         className="container mx-auto p-5 text-[8vw] tracking-tighter leading-none lg:text-[4vw] text-white py-40"

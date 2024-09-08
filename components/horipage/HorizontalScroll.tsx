@@ -5,6 +5,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Video from "../video/Video";
+import Unsplash from "../unsplash/Unsplash";
+import SplitText from "../split-text/SplitText";
+import SpinningCube from "../spinning-cube/SpinningCube";
 
 const Scroll = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,12 +31,15 @@ const Scroll = () => {
   return (
     <div ref={containerRef}>
       <div className="flex w-fit" ref={horizontalSection}>
-        <div className="w-screen h-screen">
-          <Video />
+        <div className="w-screen h-screen  relative">
+          <SpinningCube />
         </div>
-        <div className="w-screen h-screen bg-blue-400"></div>
-        <div className="w-screen h-screen bg-green-400"></div>
-        <div className="w-screen h-screen bg-yellow-400"></div>
+        <div className="w-screen h-screen  relative">
+          <Unsplash />
+        </div>
+        <div className="w-screen h-screen  relative">
+          <SplitText />
+        </div>
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ export default function Video() {
     <div className="flex justify-center">
       <video
         ref={videoRef}
-        className="w-full h-fit object-fit self-center"
+        className="w-full h-screen object-fill self-center"
         src="/webm/cybercortex.webm"
         muted
       />

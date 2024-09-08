@@ -19,7 +19,7 @@ const Ticker = ({ color }: { color: string }) => {
             trigger: tickerRef.current,
             start: "center bottom",
             end: "bottom top",
-            scrub: 50,
+            scrub: 40,
           },
           modifiers: {
             x: gsap.utils.unitize((x) => parseFloat(x) % tickerWidth),
@@ -50,9 +50,9 @@ const Ticker = ({ color }: { color: string }) => {
         className="text-[49vw] text-nowrap font-bold uppercase p-0  m-0 flex gap-0"
         style={{
           display: "inline-block",
-          fontSize: "49vw",
-          lineHeight: "48vw",
-          height: "49vw",
+          fontSize: "29vw",
+          lineHeight: "28vw",
+          height: "29vw",
           width: "content",
           color: color,
         }}
