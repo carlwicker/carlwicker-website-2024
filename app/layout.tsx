@@ -7,6 +7,7 @@ import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import { usePathname } from "next/navigation";
 import ReactLenis from "lenis/react";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,6 +23,10 @@ export default function RootLayout({
 
   return (
     <html>
+      <Head>
+        <title>Carl Wicker | Web Developer</title>
+        <Analytics />
+      </Head>
       <body>
         <ReactLenis root>
           <main className={`${inter.className} overflow-x-hidden`}>
