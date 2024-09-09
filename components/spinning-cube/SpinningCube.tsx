@@ -5,11 +5,17 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export default function SpinningCube() {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const donutRefs = useRef<THREE.Mesh<THREE.TorusGeometry>[]>([]);
+
+  const browserInfo = {
+    userAgent: navigator.userAgent,
+    platform: navigator.platform,
+    language: navigator.language,
+    vendor: navigator.vendor,
+  };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -91,12 +97,8 @@ export default function SpinningCube() {
     // Position the camera
     camera.position.z = 5;
 
-    // Set up OrbitControls
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = false; // Enable damping (inertia)
-    controls.dampingFactor = 0.25; // Damping factor
-    controls.screenSpacePanning = false; // Disable screen space panning
-    controls.maxPolarAngle = Math.PI / 2; // Limit vertical rotation
+    // Change cursor to drag icon
+    renderer.domElement.classList.add("drag-cursor");
 
     // Set up post-processing
     const composer = new EffectComposer(renderer);
@@ -107,7 +109,7 @@ export default function SpinningCube() {
       new THREE.Vector2(window.innerWidth, window.innerHeight),
       1.5, // strength
       0.4, // radius
-      0.15 // threshold
+      0.1 // threshold
     );
     composer.addPass(bloomPass);
 
@@ -124,14 +126,33 @@ export default function SpinningCube() {
 
       donutRefs.current.forEach((donut) => {
         if (intersects.find((intersect) => intersect.object === donut)) {
-          (donut.material as THREE.MeshStandardMaterial).emissiveIntensity = 5;
+          gsap.to(donut.material as THREE.MeshStandardMaterial, {
+            emissiveIntensity: 5,
+            duration: 2.5,
+          });
         } else {
-          (donut.material as THREE.MeshStandardMaterial).emissiveIntensity = 3;
+          gsap.to(donut.material as THREE.MeshStandardMaterial, {
+            emissiveIntensity: 3,
+            duration: 2.5,
+          });
         }
       });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+
+    // GSAP ScrollTrigger to move donuts on z-axis
+    donutRefs.current.forEach((donut, index) => {
+      gsap.to(donut.position, {
+        z: 2.8, // Target z position
+        scrollTrigger: {
+          trigger: mountRef.current,
+          start: "top 20%",
+          end: "bottom 90%",
+          scrub: true,
+        },
+      });
+    });
 
     // Animation loop
     const animate = () => {
@@ -139,11 +160,8 @@ export default function SpinningCube() {
 
       // Rotate the donuts on the x-axis only
       donutRefs.current.forEach((donut) => {
-        donut.rotation.y += 0.01;
+        donut.rotation.y += 0.008;
       });
-
-      // Update controls
-      controls.update();
 
       // Render the scene with bloom effect
       composer.render();
@@ -165,11 +183,23 @@ export default function SpinningCube() {
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
+
       if (mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
       }
     };
   }, []);
 
-  return <div ref={mountRef} className="m-0 p-0 flex-1"></div>;
+  return (
+    <div ref={mountRef} className="relative">
+      <div className="container mx-auto">
+        <div className="absolute h-full flex flex-col justify-end lg:w-1/3 p-5 py-40">
+          <p>User Agent: {browserInfo.userAgent}</p>
+          <p>Platform: {browserInfo.platform}</p>
+          <p>Language: {browserInfo.language}</p>
+          <p>Vendor: {browserInfo.vendor}</p>
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -69,6 +69,9 @@ export default function HeroLinks() {
           Framer Motion
         </motion.div>
         <motion.div variants={childVariants} className="font-semibold">
+          ThreeJS
+        </motion.div>
+        <motion.div variants={childVariants} className="font-semibold">
           TailwindCSS
         </motion.div>
         <motion.div variants={childVariants} className="font-semibold">
