@@ -12,7 +12,7 @@ export default function SpinningCube() {
 
   const browserInfo = {
     userAgent: navigator.userAgent,
-    platform: navigator.platform,
+    platform: (navigator as any).userAgentData?.platform,
     language: navigator.language,
     vendor: navigator.vendor,
   };
@@ -96,9 +96,6 @@ export default function SpinningCube() {
 
     // Position the camera
     camera.position.z = 5;
-
-    // Change cursor to drag icon
-    renderer.domElement.classList.add("drag-cursor");
 
     // Set up post-processing
     const composer = new EffectComposer(renderer);
