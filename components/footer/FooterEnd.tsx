@@ -32,7 +32,9 @@ export default function FooterEnd() {
         animate={isInView ? "show" : "hidden"} // Use isInView to control the animation
       >
         <motion.span variants={child} className={``}>
-          <Link href="/">http://carlwicker.co.uk</Link>
+          <Link href="/" className="hover:text-red-400">
+            http://carlwicker.co.uk
+          </Link>
         </motion.span>
 
         <motion.a

@@ -141,7 +141,9 @@ export default function SpinningCube() {
     // GSAP ScrollTrigger to move donuts on z-axis
     donutRefs.current.forEach((donut, index) => {
       gsap.to(donut.position, {
-        z: 2.8, // Target z position
+        z: () => {
+          return window.innerWidth < 500 ? 1.2 : 2.8;
+        }, // Target z position
         scrollTrigger: {
           trigger: mountRef.current,
           start: "top 20%",

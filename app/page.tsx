@@ -13,7 +13,7 @@ import SpinningCube from "@/components/spinning-cube/SpinningCube";
 
 export default function Home() {
   return (
-    <main className="text-white flex flex-col items-center justify-center">
+    <main className="text-white flex flex-col items-center justify-center font-thin">
       <Hero />
       {/* <Video /> */}
       {/* <ImageScroller /> */}
