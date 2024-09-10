@@ -26,7 +26,7 @@ export default function FooterEnd() {
   return (
     <div ref={ref}>
       <motion.div
-        className="flex flex-col text-xs font-thin "
+        className="flex flex-col "
         variants={container}
         initial="hidden"
         animate={isInView ? "show" : "hidden"} // Use isInView to control the animation
@@ -35,11 +35,19 @@ export default function FooterEnd() {
           <Link href="/">http://carlwicker.co.uk</Link>
         </motion.span>
 
-        <motion.a variants={child} href="mailto:carlwicker@gmail.com">
+        <motion.a
+          variants={child}
+          className="hover:text-red-400"
+          href="mailto:carlwicker@gmail.com"
+        >
           carlwicker@gmail.com
         </motion.a>
 
-        <motion.a variants={child} href="tel:44 7810 830237">
+        <motion.a
+          variants={child}
+          href="tel:44 7810 830237"
+          className="hover:text-red-400"
+        >
           44 7810 830237
         </motion.a>
       </motion.div>

@@ -10,12 +10,12 @@ export default function SpinningCube() {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const donutRefs = useRef<THREE.Mesh<THREE.TorusGeometry>[]>([]);
 
-  const browserInfo = {
-    userAgent: navigator.userAgent,
-    platform: (navigator as any).userAgentData?.platform,
-    language: navigator.language,
-    vendor: navigator.vendor,
-  };
+  // const browserInfo = {
+  //   userAgent: (navigator as any).userAgentData?.userAgent,
+  //   platform: (navigator as any).userAgentData?.platform,
+  //   language: navigator.language,
+  //   vendor: (navigator as any).userAgentData?.vendor,
+  // };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -190,12 +190,23 @@ export default function SpinningCube() {
   return (
     <div ref={mountRef} className="relative">
       <div className="container mx-auto">
-        <div className="absolute h-full flex flex-col justify-end lg:w-1/3 p-5 py-40">
-          <p>User Agent: {browserInfo.userAgent}</p>
-          <p>Platform: {browserInfo.platform}</p>
-          <p>Language: {browserInfo.language}</p>
-          <p>Vendor: {browserInfo.vendor}</p>
-        </div>
+        {/* <div className="absolute h-full flex flex-col justify-end lg:w-1/3 p-5 py-40">
+          <p>
+            User Agent:{" "}
+            <div className="font-extrabold">{browserInfo.userAgent}</div>
+          </p>
+          <p>
+            Platform:{" "}
+            <div className="font-extrabold">{browserInfo.platform}</div>
+          </p>
+          <p>
+            Language:{" "}
+            <div className="font-extrabold">{browserInfo.language}</div>
+          </p>
+          <p>
+            Vendor: <div className="font-extrabold">{browserInfo.vendor}</div>
+          </p>
+        </div> */}
       </div>
     </div>
   );
