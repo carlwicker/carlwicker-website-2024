@@ -10,10 +10,22 @@ import Video from "@/components/video/Video";
 import HorizontalScroll from "@/components/horipage/HorizontalScroll";
 import Interstellar from "@/components/interstellar-poster/InterstellarPoster";
 import SpinningCube from "@/components/spinning-cube/SpinningCube";
+import Lenis from "lenis";
 
 export default function Home() {
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
-    <main className="text-white flex flex-col items-center justify-center font-thin">
+    <main className="text-white font-thin">
       <Hero />
       {/* <Video /> */}
       {/* <ImageScroller /> */}
