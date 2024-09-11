@@ -3,13 +3,18 @@ import FooterEnd from "./FooterEnd";
 
 export default function Footer() {
   return (
-    <div className="container mx-auto flex items-center justify-center text-white -z-50 py-40 bottom-0 relative">
-      <div className="container flex flex-col lg:flex-row w-full lg:gap-0 gap-16 px-5 ">
-        <div className="lg:w-3/12">
-          <FooterStart />
-        </div>
-        <div className="lg:w-3/12">
-          <FooterEnd />
+    <div
+      className="relative lg:h-[400px] h-[800px]"
+      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+    >
+      <div className="fixed bottom-0 lg:h-[400px] h-[800px] w-full">
+        <div className="container flex lg:flex-row flex-col gap-20 px-5 py-40 mx-auto text-normal">
+          <div className="lg:w-1/2">
+            <FooterStart />
+          </div>
+          <div className="lg:w-1/2">
+            <FooterEnd />
+          </div>
         </div>
       </div>
     </div>

@@ -106,13 +106,13 @@ export default function HeroLinks() {
           <motion.div variants={childVariants}>Contact</motion.div>
           <motion.div variants={childVariants} className="flex flex-col">
             <a
-              className="font-semibold hover:text-red-600  transition-all"
+              className="font-semibold hover:text-red-400  transition-all"
               href="mailto:carlwicker@gmail.com"
             >
               carlwicker@gmail.com
             </a>
             <a
-              className="font-semibold hover:text-red-600  transition-all"
+              className="font-semibold hover:text-red-400  transition-all"
               href="tel:44 7810 830237"
             >
               44 7810 830237

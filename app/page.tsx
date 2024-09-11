@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import Footer from "@/components/footer/Footer";
 import Hero from "@/components/hero/Hero";
 import ImageScroller from "@/components/image-scroller/ImageScroller";
@@ -36,7 +36,7 @@ export default function Home() {
         <HorizontalScroll />
       </div> */}
       <SpinningCube />
-      {/* <Interstellar /> */}
+      <Interstellar />
 
       <Footer />
     </main>

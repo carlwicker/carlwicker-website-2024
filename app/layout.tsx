@@ -22,7 +22,7 @@ export default function RootLayout({
   const pathname = usePathname();
 
   return (
-    <html>
+    <html lang="en">
       <body className={inter.className}>
         {/* <ReactLenis root> */}
 
