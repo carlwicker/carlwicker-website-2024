@@ -6,8 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Hero() {
   const h1Ref = useRef<any>(null);
-  const linksRef = useRef<any>(null);
-  // Use Framer Motion's useViewportScroll hook to get scroll values
+
   const { scrollY } = useScroll();
 
   // Use Framer Motion's useTransform hook to interpolate the scroll value into a translateY value
@@ -15,16 +14,16 @@ export default function Hero() {
   const y = useTransform(scrollY, [0, -100], [100, 0]);
 
   return (
-    <div className="container mx-auto flex min-h-screen flex-col justify-center p-5 ">
+    <div className="container mx-auto flex min-h-screen flex-col justify-center p-5">
       <motion.div
         ref={h1Ref}
         style={{ y }}
-        className="text-[8vw] py-10 font-semibold w-full flex flex-col container tracking-tighter leading-none -mt-[100px]  "
+        className="text-[8vw] py-10 font-semibold w-full flex flex-col container tracking-tighter leading-none -mt-[100px]"
       >
         <div className="py-20">Web Developer Specialising In UI Animation</div>
       </motion.div>
 
-      <motion.div ref={linksRef} className="z-10">
+      <motion.div className="z-50">
         <HeroLinks />
       </motion.div>
     </div>

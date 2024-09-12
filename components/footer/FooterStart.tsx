@@ -36,15 +36,15 @@ export default function FooterStart({ isInView }: FooterStartProps) {
 
   return (
     <div ref={ref}>
-      <motion.span variants={child} className="font-thin">
+      <motion.span variants={child} className="font-extralight">
         Mail
       </motion.span>
-      <motion.div className="flex flex-col font-normal">
+      <motion.div className="flex flex-col font-semibold">
         <motion.div
           variants={container}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="flex flex-col border-t-white border-t pt-10 "
+          className="flex flex-col "
         >
           <motion.span variants={child}>Carl Wicker</motion.span>
           <motion.span variants={child}>10 Bloomsbury Place</motion.span>

@@ -24,14 +24,14 @@ export default function HeroLinks() {
 
   return (
     <motion.div
-      className="flex gap-10 lg:gap-0 flex-col lg:flex-row font-thin"
+      className="flex gap-10 lg:gap-5 flex-col lg:flex-row font-extralight z-50"
       ref={ref}
     >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
-        className="lg:w-3/12"
+        className="lg:w-1/4"
       >
         <motion.div variants={childVariants}>UX/UI</motion.div>
         <motion.div className="font-semibold" variants={childVariants}>
@@ -47,7 +47,7 @@ export default function HeroLinks() {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
-        className="lg:w-3/12"
+        className="lg:w-1/4"
       >
         <motion.div variants={childVariants}>Front End Development</motion.div>
         <motion.div variants={childVariants} className="font-semibold">
@@ -84,7 +84,7 @@ export default function HeroLinks() {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
-        className="lg:w-3/12"
+        className="lg:w-1/4"
       >
         <motion.div variants={childVariants}>Cloud</motion.div>
         <motion.div variants={childVariants} className="font-semibold">
@@ -100,13 +100,13 @@ export default function HeroLinks() {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
-        className="lg:w-3/12"
+        className="lg:w-1/4"
       >
         <motion.div>
           <motion.div variants={childVariants}>Contact</motion.div>
           <motion.div variants={childVariants} className="flex flex-col">
             <a
-              className="font-semibold hover:text-red-400  transition-all"
+              className="font-semibold hover:text-red-400 text-white transition-all"
               href="mailto:carlwicker@gmail.com"
             >
               carlwicker@gmail.com

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 
@@ -27,13 +27,13 @@ export default function FooterEnd({ isInView }: FooterEndProps) {
   };
 
   return (
-    <div ref={ref} className="font-normal">
-      <motion.div className="font-thin">Digital / Vox</motion.div>
+    <div ref={ref} className="font-semibold">
+      <motion.div className="font-extralight">Web / Telephone</motion.div>
       <motion.div
-        className="flex flex-col border-t-white border-t pt-10"
+        className="flex flex-col "
         variants={container}
         initial="hidden"
-        animate={isInView ? "show" : "hidden"} // Use isInView to control the animation
+        animate={isInView ? "show" : "hidden"}
       >
         <motion.span variants={child} className={``}>
           <Link href="/" className="hover:text-red-400">

@@ -12,20 +12,22 @@ export default function Footer() {
 
   return (
     <div
-      className={`bg-[#111] relative lg:h-[400px] h-[600px] ${inter.className}`}
+      className={`bg-[#111] relative lg:h-[400px] h-[600px]   ${inter.className}`}
       style={{
         clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
       }}
       ref={ref}
     >
-      <div className="fixed bottom-0 lg:h-[400px] h-[600px] w-full">
-        <div className="container flex lg:flex-row flex-col lg:gap-20 gap-10 px-5 mx-auto font-thin py-20 tracking-tight">
-          <div className="lg:w-3/12">
+      <div className="fixed bottom-0 lg:h-[400px] h-[600px] w-full flex items-center justify-center ">
+        <div className="container mx-auto px-5 flex gap-10 lg:gap-5 flex-col lg:flex-row font-extralight">
+          <div className="lg:w-[25vw]">
             <FooterStart isInView />
           </div>
-          <div className="lg:w-3/12">
+          <div className="lg:w-[25vw]">
             <FooterEnd isInView />
           </div>
+          <div className="lg:w-[25vw]"></div>
+          <div className="lg:w-[25vw]"></div>
         </div>
       </div>
     </div>
