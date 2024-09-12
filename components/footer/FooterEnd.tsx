@@ -28,9 +28,9 @@ export default function FooterEnd({ isInView }: FooterEndProps) {
 
   return (
     <div ref={ref} className="font-normal">
-      <motion.div className="font-thin">Digital</motion.div>
+      <motion.div className="font-thin">Digital / Vox</motion.div>
       <motion.div
-        className="flex flex-col border-t-[#333] border-t pt-10"
+        className="flex flex-col border-t-white border-t pt-10"
         variants={container}
         initial="hidden"
         animate={isInView ? "show" : "hidden"} // Use isInView to control the animation

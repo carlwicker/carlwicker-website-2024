@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="text-white font-thin">
+    <main className="text-white font-thin overflow-x-hidden">
       <Hero />
       {/* <Video /> */}
       {/* <ImageScroller /> */}
@@ -35,8 +35,8 @@ export default function Home() {
       {/* <div className="w-full">
         <HorizontalScroll />
       </div> */}
-      <SpinningCube />
-      <Interstellar />
+      {/* <SpinningCube /> */}
+      {/* <Interstellar /> */}
 
       <Footer />
     </main>

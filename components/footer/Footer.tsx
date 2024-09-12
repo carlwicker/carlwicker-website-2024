@@ -12,14 +12,14 @@ export default function Footer() {
 
   return (
     <div
-      className={`relative lg:h-[400px] h-[600px] ${inter.className}`}
+      className={`bg-[#111] relative lg:h-[400px] h-[600px] ${inter.className}`}
       style={{
         clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
       }}
       ref={ref}
     >
       <div className="fixed bottom-0 lg:h-[400px] h-[600px] w-full">
-        <div className="container flex lg:flex-row flex-col gap-20 px-5 mx-auto font-thin py-20 tracking-tight">
+        <div className="container flex lg:flex-row flex-col lg:gap-20 gap-10 px-5 mx-auto font-thin py-20 tracking-tight">
           <div className="lg:w-3/12">
             <FooterStart isInView />
           </div>
