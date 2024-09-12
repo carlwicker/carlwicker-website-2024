@@ -4,9 +4,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 
-export default function FooterEnd() {
+interface FooterEndProps {
+  isInView: boolean;
+}
+
+export default function FooterEnd({ isInView }: FooterEndProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
 
   const container = {
     hidden: { opacity: 0 },
@@ -24,9 +27,10 @@ export default function FooterEnd() {
   };
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="font-normal">
+      <motion.div className="font-thin">Digital</motion.div>
       <motion.div
-        className="flex flex-col "
+        className="flex flex-col border-t-[#333] border-t pt-10"
         variants={container}
         initial="hidden"
         animate={isInView ? "show" : "hidden"} // Use isInView to control the animation

@@ -1,11 +1,15 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
-export default function FooterStart() {
+interface FooterStartProps {
+  isInView: boolean;
+}
+
+export default function FooterStart({ isInView }: FooterStartProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false }); // `once: true` ensures the animation only plays once
+  // const isInView = useInView(ref, { once: false }); // `once: true` ensures the animation only plays once
 
   // Variants for the container to stagger the children animation
   const container = {
@@ -32,17 +36,22 @@ export default function FooterStart() {
 
   return (
     <div ref={ref}>
-      <motion.div
-        className="flex flex-col"
-        variants={container}
-        initial="hidden"
-        animate={isInView ? "show" : "hidden"} // Use isInView to control the animation
-      >
-        <motion.span variants={child}>Carl Wicker</motion.span>
-        <motion.span variants={child}>Bloomsbury Place</motion.span>
-        <motion.span variants={child}>Brighton</motion.span>
-        <motion.span variants={child}>United Kingdom</motion.span>
-        <motion.span variants={child}>BN2 1DA</motion.span>
+      <motion.span variants={child} className="font-thin">
+        Mail
+      </motion.span>
+      <motion.div className="flex flex-col font-normal">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate={isInView ? "show" : "hidden"}
+          className="flex flex-col border-t-[#333] border-t pt-10 "
+        >
+          <motion.span variants={child}>Carl Wicker</motion.span>
+          <motion.span variants={child}>10 Bloomsbury Place</motion.span>
+          <motion.span variants={child}>Brighton</motion.span>
+          <motion.span variants={child}>United Kingdom</motion.span>
+          <motion.span variants={child}>BN2 1DA</motion.span>
+        </motion.div>
       </motion.div>
     </div>
   );
