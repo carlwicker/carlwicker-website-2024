@@ -26,7 +26,7 @@ export default function SplitText() {
           end: "top 20%",
           scrub: 1,
           toggleActions: "restart none none none",
-          markers: true,
+          // markers: true,
         },
         opacity: 0,
         x: 400,
