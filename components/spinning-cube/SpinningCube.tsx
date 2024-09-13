@@ -10,12 +10,12 @@ export default function SpinningCube() {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const donutRefs = useRef<THREE.Mesh<THREE.TorusGeometry>[]>([]);
 
-  // const browserInfo = {
-  //   userAgent: (navigator as any).userAgentData?.userAgent,
-  //   platform: (navigator as any).userAgentData?.platform,
-  //   language: navigator.language,
-  //   vendor: (navigator as any).userAgentData?.vendor,
-  // };
+  const browserInfo = {
+    userAgent: (navigator as any).userAgentData?.userAgent,
+    platform: (navigator as any).userAgentData?.platform,
+    language: navigator.language,
+    vendor: (navigator as any).userAgentData?.vendor,
+  };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

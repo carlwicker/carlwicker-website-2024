@@ -32,13 +32,13 @@ const Scroll = () => {
     <div ref={containerRef}>
       <div className="flex w-fit" ref={horizontalSection}>
         <div className="w-screen h-screen  relative">
-          <SpinningCube />
+          <Video />
         </div>
         <div className="w-screen h-screen  relative">
-          <Unsplash />
+          <Video />
         </div>
         <div className="w-screen h-screen  relative">
-          <SplitText />
+          <Video />
         </div>
       </div>
     </div>

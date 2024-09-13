@@ -1,6 +1,6 @@
 import FooterStart from "./FooterStart";
 import FooterEnd from "./FooterEnd";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Inter } from "next/font/google";
 
@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <div
-      className={`bg-[#111] relative lg:h-[400px] h-[600px]   ${inter.className}`}
+      className={`bg-[#111] relative lg:h-[400px] h-[600px] ${inter.className}`}
       style={{
         clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
       }}

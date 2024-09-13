@@ -11,9 +11,11 @@ import HorizontalScroll from "@/components/horipage/HorizontalScroll";
 import Interstellar from "@/components/interstellar-poster/InterstellarPoster";
 import SpinningCube from "@/components/spinning-cube/SpinningCube";
 import Lenis from "lenis";
+import LocomotiveScroll from "locomotive-scroll";
 
 export default function Home() {
   useEffect(() => {
+    const locomotiveScroll = new LocomotiveScroll();
     const lenis = new Lenis();
 
     function raf(time: any) {
@@ -25,19 +27,25 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="text-white font-thin overflow-x-hidden">
+    <main
+      className="text-white font-thin overflow-x-hidden"
+      data-scroll-container
+    >
       <Hero />
-      {/* <Video /> */}
-      {/* <ImageScroller /> */}
-      <SplitText />
 
+      {/* <ImageScroller /> */}
+
+      {/* <SpinningCube /> */}
       {/* <Ticker color={"#111"} /> */}
       {/* <div className="w-full">
         <HorizontalScroll />
       </div> */}
-      {/* <SpinningCube /> */}
-      {/* <Interstellar /> */}
 
+      <div data-scroll data-scroll-speed="0.25">
+        {/* <Interstellar /> <SpinningCube /> */}
+        <SplitText />
+      </div>
+      {/* <Video />          */}
       <Footer />
     </main>
   );

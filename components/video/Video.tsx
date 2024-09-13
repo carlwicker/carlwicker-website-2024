@@ -10,20 +10,26 @@ export default function Video() {
   useEffect(() => {
     if (videoRef.current) {
       const video = videoRef.current;
-      const duration = video.duration || 0;
 
       gsap.to(video, {
-        currentTime: duration || 0,
-        ease: "none",
+        currentTime: video.duration || 0,
+        ease: "sine.out",
         scrollTrigger: {
           trigger: video,
           start: "top bottom",
-          end: "bottom 25%",
+          end: "bottom 75%",
           scrub: true,
-          //   markers: true,
+          // markers: true,
           onUpdate: (self) => {
             const progress = self.progress;
-            video.style.opacity = `${0 + progress * 100}%`;
+            const currentTime = progress * video.duration;
+            video.currentTime = currentTime;
+
+            // Update clip-path based on scroll progress
+            const clipPathValue = `inset(${(1 - progress) * 50}% ${
+              (1 - progress) * 50
+            }% ${(1 - progress) * 50}% ${(1 - progress) * 50}%)`;
+            video.style.clipPath = clipPathValue;
           },
         },
       });
@@ -35,8 +41,9 @@ export default function Video() {
       <video
         ref={videoRef}
         className="w-full h-screen object-fill self-center"
-        src="/webm/cybercortex.webm"
+        src="/webm/synctest.mp4"
         muted
+        style={{ clipPath: "inset(50% 50% 50% 50%)" }} // Initial clip-path
       />
     </div>
   );

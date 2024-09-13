@@ -44,7 +44,7 @@ export default function FooterStart({ isInView }: FooterStartProps) {
           variants={container}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="flex flex-col "
+          className="flex flex-col"
         >
           <motion.span variants={child}>Carl Wicker</motion.span>
           <motion.span variants={child}>10 Bloomsbury Place</motion.span>

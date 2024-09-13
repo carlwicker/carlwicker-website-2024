@@ -5,8 +5,6 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./globals.css";
 import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import { usePathname } from "next/navigation";
-import ReactLenis from "lenis/react";
-import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({

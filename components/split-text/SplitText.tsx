@@ -22,10 +22,11 @@ export default function SplitText() {
       gsap.from(text.lines, {
         scrollTrigger: {
           trigger: textRef.current,
-          start: "top bottom",
-          end: "top 30%",
+          start: "top 90%",
+          end: "top 20%",
           scrub: 1,
           toggleActions: "restart none none none",
+          markers: true,
         },
         opacity: 0,
         x: 400,
