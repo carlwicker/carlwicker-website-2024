@@ -8,6 +8,7 @@ import Video from "../video/Video";
 import Unsplash from "../unsplash/Unsplash";
 import SplitText from "../split-text/SplitText";
 import SpinningCube from "../spinning-cube/SpinningCube";
+import Iracing from "../iracing/Iracing";
 
 const Scroll = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -32,13 +33,13 @@ const Scroll = () => {
     <div ref={containerRef}>
       <div className="flex w-fit" ref={horizontalSection}>
         <div className="w-screen h-screen  relative">
-          <Video />
+          <Iracing />
         </div>
         <div className="w-screen h-screen  relative">
-          <Video />
+          <SpinningCube />
         </div>
         <div className="w-screen h-screen  relative">
-          <Video />
+          <Iracing />
         </div>
       </div>
     </div>

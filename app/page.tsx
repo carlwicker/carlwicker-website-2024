@@ -12,6 +12,7 @@ import Interstellar from "@/components/interstellar-poster/InterstellarPoster";
 import SpinningCube from "@/components/spinning-cube/SpinningCube";
 import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
+import Iracing from "@/components/iracing/Iracing";
 
 export default function Home() {
   useEffect(() => {
@@ -42,9 +43,12 @@ export default function Home() {
       </div> */}
 
       <div data-scroll data-scroll-speed="0.25">
-        {/* <Interstellar /> <SpinningCube /> */}
         <SplitText />
       </div>
+      <div data-scroll data-scroll-speed="-0.5">
+        <Iracing />
+      </div>
+
       {/* <Video />          */}
       <Footer />
     </main>
