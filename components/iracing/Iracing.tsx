@@ -21,7 +21,7 @@ export default function Iracing() {
           start: "top 80%",
           end: "bottom bottom",
           scrub: true,
-          markers: true,
+          // markers: true,
           onUpdate: (self) => {
             const progress = self.progress;
             const clipPathValue = `inset(${(1 - progress) * 50}% ${

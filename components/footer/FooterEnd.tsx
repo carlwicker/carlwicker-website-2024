@@ -41,6 +41,16 @@ export default function FooterEnd({ isInView }: FooterEndProps) {
           </Link>
         </motion.span>
 
+        <motion.span variants={child} className={``}>
+          <a
+            href="https://github.com/carlwicker"
+            target="_blank"
+            className="hover:text-red-400"
+          >
+            https://github.com/carlwicker
+          </a>
+        </motion.span>
+
         <motion.a
           variants={child}
           className="hover:text-red-400"

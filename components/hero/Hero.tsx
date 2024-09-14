@@ -20,10 +20,12 @@ export default function Hero() {
         style={{ y }}
         className="text-[8vw] py-10 font-semibold w-full flex flex-col container tracking-tighter leading-none -mt-[100px]"
       >
-        <div className="py-20">Web Developer Specialising In UI Animation</div>
+        <div className="py-20" data-scroll data-scroll-speed="0.15">
+          Web Developer Specialising In UI Animation
+        </div>
       </motion.div>
 
-      <motion.div className="z-50">
+      <motion.div className="z-50" data-scroll data-scroll-speed="0.125">
         <HeroLinks />
       </motion.div>
     </div>

@@ -47,7 +47,7 @@ const Ticker = ({ color }: { color: string }) => {
     >
       <div
         ref={tickerRef}
-        className="text-[49vw] text-nowrap font-bold uppercase p-0  m-0 flex gap-0"
+        className="text-[49vw] text-nowrap font-bold uppercase p-0 m-0 flex gap-0"
         style={{
           display: "inline-block",
           fontSize: "29vw",
@@ -56,6 +56,8 @@ const Ticker = ({ color }: { color: string }) => {
           width: "content",
           color: color,
         }}
+        data-scroll
+        data-scroll-speed="1.25"
       >
         ReactJS//NextJS//TypeScript//JavaScript//GSAP//Framer
         Motion//TailwindCSS//CSS//ReactJS//NextJS//TypeScript//JavaScript//GSAP//Framer

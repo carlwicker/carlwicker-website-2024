@@ -33,11 +33,6 @@ export default function Home() {
       data-scroll-container
     >
       <Hero />
-
-      {/* <ImageScroller /> */}
-
-      {/* <SpinningCube /> */}
-      {/* <Ticker color={"#111"} /> */}
       {/* <div className="w-full">
         <HorizontalScroll />
       </div> */}
@@ -45,11 +40,7 @@ export default function Home() {
       <div data-scroll data-scroll-speed="0.25">
         <SplitText />
       </div>
-      <div data-scroll data-scroll-speed="-0.5">
-        <Iracing />
-      </div>
 
-      {/* <Video />          */}
       <Footer />
     </main>
   );
