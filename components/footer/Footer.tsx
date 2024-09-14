@@ -1,8 +1,9 @@
 import FooterStart from "./FooterStart";
-import FooterEnd from "./FooterEnd";
+import FooterMiddle from "./FooterMiddle";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Inter } from "next/font/google";
+import FooterEnd from "./FooterEnd";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +25,12 @@ export default function Footer() {
             <FooterStart isInView />
           </div>
           <div className="lg:w-[25vw]">
-            <FooterEnd isInView />
+            <FooterMiddle isInView />
           </div>
           <div className="lg:w-[25vw]"></div>
-          <div className="lg:w-[25vw]"></div>
+          <div className="lg:w-[25vw]">
+            <FooterEnd />
+          </div>
         </div>
       </div>
     </div>
