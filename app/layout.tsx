@@ -23,11 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* <ReactLenis root> */}
-
         {/* <PageTransitionEffect> */}
         {children}
         {/* </PageTransitionEffect> */}
-
         {/* </ReactLenis> */}
       </body>
     </html>
