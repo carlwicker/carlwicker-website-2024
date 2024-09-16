@@ -27,22 +27,10 @@ function ParticleCloud() {
       }
     };
 
-    const handleMouseOver = () => {
-      setColor(getRandomColor());
-    };
-
-    const handleMouseOut = () => {
-      setColor(getRandomColor());
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("mouseover", handleMouseOver);
-    window.addEventListener("mouseout", handleMouseOut);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mouseover", handleMouseOver);
-      window.removeEventListener("mouseout", handleMouseOut);
     };
   }, []);
 
@@ -88,7 +76,7 @@ export default function TheCube() {
   return (
     <Canvas
       style={{ height: "100vh", width: "100vw", backgroundColor: "#234" }}
-      camera={{ position: [0, 0, 5] }}
+      camera={{ position: [0, 0, 1] }}
     >
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
