@@ -21,9 +21,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} relative w-full h-full overflow-hidden`}
-      >
+      <body className={`${inter.className} relative w-full h-full `}>
         <div className="fixed top-0 left-0 w-full h-full z-[-1] no-touch">
           <TheCube />
         </div>
