@@ -36,9 +36,9 @@ export default function Home() {
         <SplitText />
       </div>
 
-      <div data-scroll data-scroll-speed="0">
+      {/* <div data-scroll data-scroll-speed="0">
         <TheCube />
-      </div>
+      </div> */}
 
       <Footer />
     </main>

@@ -21,7 +21,7 @@ export default function Hero() {
         className="text-[8vw] py-10 font-semibold w-full flex flex-col container tracking-tighter leading-none -mt-[100px]"
       >
         <div className="py-20" data-scroll data-scroll-speed="0.15">
-          Web Developer Specialising In UI Animation
+          Freelance Web Developer
         </div>
       </motion.div>
 

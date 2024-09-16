@@ -5,7 +5,7 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./globals.css";
 import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import { usePathname } from "next/navigation";
-import { Analytics } from "@vercel/analytics/react";
+import TheCube from "@/components/thecube/TheCube";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,12 +21,15 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {/* <ReactLenis root> */}
-        {/* <PageTransitionEffect> */}
-        {children}
-        {/* </PageTransitionEffect> */}
-        {/* </ReactLenis> */}
+      <body
+        className={`${inter.className} relative w-full h-full overflow-hidden`}
+      >
+        <div className="fixed top-0 left-0 w-full h-full z-[-1]">
+          <TheCube />
+        </div>
+        <div className="relative z-10 w-full h-full overflow-auto">
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -1,87 +1,98 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { useRef, useState } from "react";
-import { Points, PointsMaterial, BoxGeometry, Vector3 } from "three";
+import { useRef, useEffect, useState } from "react";
+import {
+  Points,
+  PointsMaterial,
+  BufferGeometry,
+  Float32BufferAttribute,
+} from "three";
+import gsap from "gsap";
 
-function PointsComponent() {
+function ParticleCloud() {
   const pointsRef = useRef<Points>(null);
-  const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
+  const [color, setColor] = useState("#000");
 
-  useFrame((state) => {
-    const { pointer } = state;
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const scale = 1 + scrollY * 0.001; // Adjust the multiplier to control scaling speed
+      if (pointsRef.current) {
+        gsap.to(pointsRef.current.scale, {
+          x: scale,
+          y: scale,
+          z: scale,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      }
+    };
 
+    const handleMouseOver = () => {
+      setColor(getRandomColor());
+    };
+
+    const handleMouseOut = () => {
+      setColor(getRandomColor());
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("mouseout", handleMouseOut);
+    };
+  }, []);
+
+  useFrame(() => {
     if (pointsRef.current) {
-      // Rotate the points mesh
-      pointsRef.current.rotation.y += 0.01;
-      pointsRef.current.rotation.z = 0.45;
-      pointsRef.current.rotation.x = 0.45;
-
-      const points = pointsRef.current.geometry.attributes.position;
-      const pointCount = points.count;
-      let closestPoint = null;
-      let minDistance = Infinity;
-
-      for (let i = 0; i < pointCount; i++) {
-        const point = new Vector3(
-          points.getX(i),
-          points.getY(i),
-          points.getZ(i)
-        );
-        const distance = point.distanceTo(new Vector3(pointer.x, pointer.y, 0));
-
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestPoint = i;
-        }
-      }
-
-      if (minDistance < 0.1) {
-        setHoveredPoint(closestPoint);
-      } else {
-        setHoveredPoint(null);
-      }
+      pointsRef.current.rotation.y += 0.004;
     }
   });
 
+  const particleCount = 100000;
+  const positions = new Float32BufferAttribute(particleCount * 3, 3);
+
+  for (let i = 0; i < particleCount; i++) {
+    positions.setXYZ(
+      i,
+      (Math.random() - 0.5) * 10,
+      (Math.random() - 0.5) * 10,
+      (Math.random() - 0.5) * 10
+    );
+  }
+
+  const getRandomColor = () => {
+    const letters = "0123456789A";
+    let color = "#";
+    for (let i = 0; i < 3; i++) {
+      const darkValue = Math.floor(Math.random() * 8); // Random value between 0 and 7
+      color += letters[darkValue] + letters[darkValue]; // Repeat the value to ensure it's dark
+    }
+    return color;
+  };
+
   return (
-    <>
-      <points ref={pointsRef}>
-        <boxGeometry args={[1, 1, 1, 25, 25, 25]} />
-        <pointsMaterial
-          size={0.01}
-          color="red"
-          onBeforeCompile={(shader) => {
-            shader.uniforms.hoveredPoint = { value: hoveredPoint };
-            shader.vertexShader = `
-        uniform float hoveredPoint;
-        ${shader.vertexShader}
-      `;
-          }}
-        />
-      </points>
-      <EffectComposer>
-        <Bloom
-          luminanceThreshold={30.3}
-          luminanceSmoothing={30.9}
-          height={300}
-        />
-      </EffectComposer>
-    </>
+    <points ref={pointsRef}>
+      <bufferGeometry>
+        <bufferAttribute attach="attributes-position" {...positions} />
+      </bufferGeometry>
+      <pointsMaterial size={0.01} color={"color"} />
+    </points>
   );
 }
 
 export default function TheCube() {
   return (
     <Canvas
-      style={{ height: "100vh", width: "100vw" }}
-      camera={{ position: [0, 0, -1] }} // Move the camera closer
+      style={{ height: "100vh", width: "100vw", backgroundColor: "#234" }}
+      camera={{ position: [0, 0, 5] }}
     >
-      <ambientLight intensity={0.1} />
+      <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
-      <PointsComponent />
-
-      <OrbitControls enableZoom={false} />
+      <ParticleCloud />
     </Canvas>
   );
 }
