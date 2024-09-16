@@ -40,7 +40,7 @@ function ParticleCloud() {
     }
   });
 
-  const particleCount = 100000;
+  const particleCount = 1000000;
   const positions = new Float32BufferAttribute(particleCount * 3, 3);
 
   for (let i = 0; i < particleCount; i++) {
