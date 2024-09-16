@@ -10,7 +10,7 @@ import gsap from "gsap";
 
 function ParticleCloud() {
   const pointsRef = useRef<Points>(null);
-  const [color, setColor] = useState("#000");
+  const [color, setColor] = useState("#222");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +40,7 @@ function ParticleCloud() {
     }
   });
 
-  const particleCount = 100000;
+  const particleCount = 8000000;
   const positions = new Float32BufferAttribute(particleCount * 3, 3);
 
   for (let i = 0; i < particleCount; i++) {
@@ -52,22 +52,12 @@ function ParticleCloud() {
     );
   }
 
-  const getRandomColor = () => {
-    const letters = "0123456789A";
-    let color = "#";
-    for (let i = 0; i < 3; i++) {
-      const darkValue = Math.floor(Math.random() * 8); // Random value between 0 and 7
-      color += letters[darkValue] + letters[darkValue]; // Repeat the value to ensure it's dark
-    }
-    return color;
-  };
-
   return (
     <points ref={pointsRef}>
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" {...positions} />
       </bufferGeometry>
-      <pointsMaterial size={0.01} color={"color"} />
+      <pointsMaterial size={0.01} color={color} />
     </points>
   );
 }
