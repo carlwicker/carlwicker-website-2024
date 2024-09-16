@@ -40,7 +40,7 @@ function ParticleCloud() {
     }
   });
 
-  const particleCount = 8000000;
+  const particleCount = 100000;
   const positions = new Float32BufferAttribute(particleCount * 3, 3);
 
   for (let i = 0; i < particleCount; i++) {
@@ -57,7 +57,7 @@ function ParticleCloud() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" {...positions} />
       </bufferGeometry>
-      <pointsMaterial size={0.01} color={color} />
+      <pointsMaterial size={0.01} color={color} transparent />
     </points>
   );
 }
