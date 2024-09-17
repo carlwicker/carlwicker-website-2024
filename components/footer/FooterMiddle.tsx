@@ -37,7 +37,7 @@ export default function FooterMiddle({ isInView }: FooterEndProps) {
       >
         <motion.span variants={child} className={``}>
           <Link href="/" className="hover:text-red-400">
-            http://carlwicker.co.uk
+            https://carlwicker.co.uk
           </Link>
         </motion.span>
 

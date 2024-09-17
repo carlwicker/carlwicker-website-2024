@@ -7,7 +7,6 @@ import SplitText from "@/components/split-text/SplitText";
 import HorizontalScroll from "@/components/horipage/HorizontalScroll";
 import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
-import TheCube from "@/components/thecube/TheCube";
 
 export default function Home() {
   useEffect(() => {
@@ -35,11 +34,6 @@ export default function Home() {
       <div data-scroll data-scroll-speed="0.25">
         <SplitText />
       </div>
-
-      {/* <div data-scroll data-scroll-speed="0">
-        <TheCube />
-      </div> */}
-
       <Footer />
     </main>
   );

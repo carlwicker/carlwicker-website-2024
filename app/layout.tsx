@@ -5,7 +5,7 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./globals.css";
 import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import { usePathname } from "next/navigation";
-import TheCube from "@/components/thecube/TheCube";
+import ParticleCube from "@/components/particle-cube/ParticleCube";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} relative w-full h-full `}>
         <div className="fixed top-0 left-0 w-full h-full z-[-1] no-touch">
-          <TheCube />
+          <ParticleCube />
         </div>
         <div className="relative z-10 w-full h-full overflow-auto">
           {children}

@@ -62,7 +62,7 @@ function ParticleCloud() {
   );
 }
 
-export default function TheCube() {
+export default function ParticleCube() {
   return (
     <Canvas
       style={{ height: "100vh", width: "100vw", backgroundColor: "#234" }}
