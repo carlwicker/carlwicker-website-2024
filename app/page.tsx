@@ -7,6 +7,8 @@ import SplitText from "@/components/split-text/SplitText";
 import HorizontalScroll from "@/components/horipage/HorizontalScroll";
 import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
+import LightBloom from "@/components/light-bloom/LightBloom";
+import Video from "@/components/video/Video";
 
 export default function Home() {
   useEffect(() => {
@@ -27,9 +29,11 @@ export default function Home() {
       data-scroll-container
     >
       <Hero />
-      {/* <div className="w-full">
+      {/*<div className="w-full">
         <HorizontalScroll />
-      </div> */}
+      </div>
+
+      <LightBloom /> */}
 
       <div data-scroll data-scroll-speed="0.25">
         <SplitText />

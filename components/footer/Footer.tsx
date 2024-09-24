@@ -12,23 +12,24 @@ export default function Footer() {
   const isInView = useInView(ref, { once: false });
 
   return (
+    // Fixed height must to set to achieve sticky footer effect - NO DYNAMIC HEIGHT
     <div
-      className={`bg-[#111] relative lg:h-[400px] h-[600px] ${inter.className}`}
+      className={`bg-[#111] relative sm:h-[375px] h-[600px] ${inter.className}`}
       style={{
         clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
       }}
       ref={ref}
     >
-      <div className="fixed bottom-0 lg:h-[400px] h-[600px] w-full flex items-center justify-center ">
-        <div className="container mx-auto px-5 flex gap-10 lg:gap-5 flex-col lg:flex-row font-extralight">
-          <div className="lg:w-[25vw]">
+      <div className="fixed bottom-0 sm:h-[375px] h-[600px] w-full flex items-center justify-center ">
+        <div className="container mx-auto px-5 flex gap-10  flex-col sm:flex-row font-extralight sm:text-xs lg:text-base">
+          <div className="sm:w-[25vw]">
             <FooterStart isInView />
           </div>
-          <div className="lg:w-[25vw]">
+          <div className="sm:w-[25vw]">
             <FooterMiddle isInView />
           </div>
-          <div className="lg:w-[25vw]"></div>
-          <div className="lg:w-[25vw]">
+          <div className="w-[25%]"></div>
+          <div className="sm:w-[25vw]">
             <FooterEnd />
           </div>
         </div>

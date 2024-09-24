@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SpinningCube from "../spinning-cube/SpinningCube";
+import SpinningCube from "../light-bloom/LightBloom";
 import Hero from "../hero/Hero";
 import InterstellarPoster from "../interstellar-poster/InterstellarPoster";
 

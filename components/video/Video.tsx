@@ -11,6 +11,24 @@ export default function Video() {
     if (videoRef.current) {
       const video = videoRef.current;
 
+      const updateVideoTime = (self: any) => {
+        const progress = self.progress;
+        const duration = video.duration;
+
+        if (isFinite(duration)) {
+          const currentTime = progress * duration;
+          video.currentTime = currentTime;
+
+          // Update clip-path based on scroll progress
+          const clipPathValue = `inset(${(1 - progress) * 50}% ${
+            (1 - progress) * 50
+          }% ${(1 - progress) * 50}% ${(1 - progress) * 50}%)`;
+          video.style.clipPath = clipPathValue;
+        } else {
+          console.error("Invalid video duration:", duration);
+        }
+      };
+
       gsap.to(video, {
         currentTime: video.duration || 0,
         ease: "sine.out",

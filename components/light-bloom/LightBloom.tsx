@@ -6,7 +6,7 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 
-export default function SpinningCube() {
+export default function LightBloom() {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const donutRefs = useRef<THREE.Mesh<THREE.TorusGeometry>[]>([]);
 

@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 import Video from "../video/Video";
 import Unsplash from "../unsplash/Unsplash";
 import SplitText from "../split-text/SplitText";
-import SpinningCube from "../spinning-cube/SpinningCube";
+import SpinningCube from "../light-bloom/LightBloom";
 import Iracing from "../iracing/Iracing";
 
 const Scroll = () => {
