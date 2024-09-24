@@ -25,11 +25,11 @@ export default function Footer() {
           <div className="sm:w-[25vw]">
             <FooterStart isInView />
           </div>
-          <div className="sm:w-[25vw]">
+          <div className="">
             <FooterMiddle isInView />
           </div>
-          <div className="w-[25%]"></div>
-          <div className="sm:w-[25vw]">
+          <div className="w-full"></div>
+          <div className="justify-self-end">
             <FooterEnd />
           </div>
         </div>

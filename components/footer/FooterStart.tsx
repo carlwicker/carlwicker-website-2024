@@ -39,12 +39,12 @@ export default function FooterStart({ isInView }: FooterStartProps) {
       <motion.span variants={child} className="font-extralight">
         Mail
       </motion.span>
-      <motion.div className="flex flex-col font-semibold">
+      <motion.div className="flex flex-col font-semibold w-full">
         <motion.div
           variants={container}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="flex flex-col"
+          className="flex flex-col text-nowrap"
         >
           <motion.span variants={child}>Carl Wicker</motion.span>
           <motion.span variants={child}>10 Bloomsbury Place</motion.span>
