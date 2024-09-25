@@ -11,18 +11,16 @@ export default function FooterStart({ isInView }: FooterStartProps) {
   const ref = useRef(null);
   // const isInView = useInView(ref, { once: false }); // `once: true` ensures the animation only plays once
 
-  // Variants for the container to stagger the children animation
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12, // Stagger the animation of children by 0.1 second
+        staggerChildren: 0.12,
       },
     },
   };
 
-  // Variants for each child (span)
   const child = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },

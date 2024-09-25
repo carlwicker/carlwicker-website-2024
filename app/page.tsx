@@ -24,18 +24,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main
-      className="text-white font-thin overflow-x-hidden"
-      data-scroll-container
-    >
+    <main className="text-white font-thin overflow-x-hidden">
       <Hero />
-      {/*<div className="w-full">
+      <div className="w-full">
         <HorizontalScroll />
       </div>
 
-      <LightBloom /> */}
+      {/* <LightBloom /> */}
 
-      <div data-scroll data-scroll-speed="0.25">
+      <div>
         <SplitText />
       </div>
       <Footer />

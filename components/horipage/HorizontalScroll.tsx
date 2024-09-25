@@ -9,6 +9,9 @@ import Unsplash from "../unsplash/Unsplash";
 import SplitText from "../split-text/SplitText";
 import SpinningCube from "../light-bloom/LightBloom";
 import Iracing from "../iracing/Iracing";
+import Swiss1 from "../swiss/Swiss1";
+import Swiss2 from "../swiss/Swiss2";
+import Swiss3 from "../swiss/Swiss3";
 
 const Scroll = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -33,13 +36,13 @@ const Scroll = () => {
     <div ref={containerRef}>
       <div className="flex w-fit" ref={horizontalSection}>
         <div className="w-screen h-screen  relative">
-          <Iracing />
+          <Swiss1 />
         </div>
         <div className="w-screen h-screen  relative">
-          <SpinningCube />
+          <Swiss2 />
         </div>
         <div className="w-screen h-screen  relative">
-          <Iracing />
+          <Swiss3 />
         </div>
       </div>
     </div>
