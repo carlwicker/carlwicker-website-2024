@@ -1,8 +1,19 @@
 export default function Swiss3() {
   return (
     <div className="flex bg-red-600 w-full h-screen px-5 py-40 text-neutral-900 font-semibold gap-10 ">
-      <div className="w-1/2 place-self-end hidden  lg:block">
-        <div className="flex text-[2vw] tracking-tight leading-[2vw] justify-end text-right">
+      <div className="w-1/2 place-self-end hidden lg:flex flex-col gap-10">
+        <div className="text-right tracking-tighter text-[8vw] leading-[8vw] self-end">
+          Der
+        </div>
+        <div className="text-[2vw] tracking-tight leading-[2vw] justify-end text-right invisible">
+          Invisible Placeholder
+        </div>
+        <div className="text-[2vw] tracking-tight leading-[2vw] justify-end text-right invisible">
+          Invisible Placeholder
+          <br />
+          Invisible Placeholder
+        </div>
+        <div className="text-[2vw] tracking-tight leading-[2vw] justify-end text-right">
           Musikalische Leitung:
           <br />
           Inszenierung:

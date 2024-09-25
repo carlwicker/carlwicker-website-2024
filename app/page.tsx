@@ -26,14 +26,15 @@ export default function Home() {
   return (
     <main className="text-white font-thin overflow-x-hidden">
       <Hero />
-      <div className="w-full">
-        <HorizontalScroll />
-      </div>
 
       {/* <LightBloom /> */}
 
       <div>
         <SplitText />
+      </div>
+
+      <div className="w-full">
+        <HorizontalScroll />
       </div>
       <Footer />
     </main>
