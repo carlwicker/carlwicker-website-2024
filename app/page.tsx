@@ -30,7 +30,14 @@ export default function Home() {
       <Hero />
 
       <SplitText />
-      <ClipText />
+
+      <div className="py-40 bg-white">
+        <ClipText>EXPERIMENTS</ClipText>
+        <ClipText>Make</ClipText>
+        <ClipText>Us</ClipText>
+        <ClipText>Stronger</ClipText>
+      </div>
+
       <div className="w-full">
         <HorizontalScroll />
       </div>

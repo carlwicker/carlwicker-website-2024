@@ -4,7 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ClipText() {
+export default function ClipText({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const textRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
 
@@ -37,17 +41,17 @@ export default function ClipText() {
   }, []);
 
   return (
-    <div className="py-20 bg-white">
+    <div className=" bg-white">
       <div className="mx-auto container">
         <div
-          className="w-fit text-9xl text-neutral-900 font-semibold tracking-tighter"
+          className="w-fit text-[200px] text-neutral-900 font-extrabold tracking-tighter"
           ref={textRef}
           style={{ clipPath: "inset(0% 100%)" }}
         >
-          <div className="h-[8rem] ">
+          <div className="h-[8rem] uppercase text-red-800">
             <div ref={innerRef}>
-              <div>Experimental Header</div>
-              <div>Experimental Header</div>
+              <div>{children}</div>
+              <div>{children}</div>
             </div>
           </div>
         </div>
