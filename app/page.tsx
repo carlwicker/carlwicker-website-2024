@@ -9,6 +9,7 @@ import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
 import LightBloom from "@/components/light-bloom/LightBloom";
 import Video from "@/components/video/Video";
+import ClipText from "@/components/clip-text/ClipText";
 import InterstellarPoster from "@/components/interstellar-poster/InterstellarPoster";
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
       <Hero />
 
       <SplitText />
-
+      <ClipText />
       <div className="w-full">
         <HorizontalScroll />
       </div>
