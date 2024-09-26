@@ -28,16 +28,11 @@ export default function Home() {
     <main className="text-white font-thin overflow-x-hidden">
       <Hero />
 
-      {/* <LightBloom /> */}
-
-      <div>
-        <SplitText />
-      </div>
+      <SplitText />
 
       <div className="w-full">
         <HorizontalScroll />
       </div>
-      {/* <InterstellarPoster /> */}
       <Footer />
     </main>
   );
