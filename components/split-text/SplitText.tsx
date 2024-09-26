@@ -45,6 +45,8 @@ export default function SplitText() {
       <div
         id="text"
         className="container mx-auto p-5 text-[8vw] tracking-tighter leading-none lg:text-[4vw] text-white pb-40 pt-20"
+        data-scroll
+        data-scroll-speed="0.25"
       >
         <motion.div ref={textRef}>
           Delivering cutting-edge UI animations, I transform static designs into

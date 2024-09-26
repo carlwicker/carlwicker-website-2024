@@ -28,6 +28,7 @@ const Scroll = () => {
         end: () => `+=${horizontalSection.current!.offsetWidth}`,
         scrub: 1,
         pin: containerRef.current,
+        markers: true,
       },
     });
   }, []);
