@@ -31,11 +31,11 @@ export default function Home() {
 
       <SplitText />
 
-      <div className="py-40 bg-white">
-        <ClipText>EXPERIMENTS</ClipText>
-        <ClipText>Make</ClipText>
-        <ClipText>Us</ClipText>
-        <ClipText>Stronger</ClipText>
+      <div className="py-40 bg-neutral-100">
+        <ClipText>perception</ClipText>
+        <ClipText>through</ClipText>
+        <ClipText>typeface</ClipText>
+        <ClipText>selection</ClipText>
       </div>
 
       <div className="w-full">

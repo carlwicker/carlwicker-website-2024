@@ -29,11 +29,11 @@ export default function ClipText({
   useEffect(() => {
     if (innerRef.current) {
       gsap.to(innerRef.current, {
-        y: "-8.5rem",
+        y: "-200px",
         scrollTrigger: {
           trigger: innerRef.current,
-          start: "top 90%",
-          end: "bottom 70%",
+          start: "top center",
+          end: "bottom center",
           scrub: true,
         },
       });
@@ -41,14 +41,14 @@ export default function ClipText({
   }, []);
 
   return (
-    <div className=" bg-white">
+    <div className=" ">
       <div className="mx-auto container">
         <div
           className="w-fit text-[200px] text-neutral-900 font-extrabold tracking-tighter"
           ref={textRef}
           style={{ clipPath: "inset(0% 100%)" }}
         >
-          <div className="h-[8rem] uppercase text-red-800">
+          <div className="h-[200px] uppercase text-neutral-800 leading-none">
             <div ref={innerRef}>
               <div>{children}</div>
               <div>{children}</div>
