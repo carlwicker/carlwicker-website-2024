@@ -7,10 +7,7 @@ import SplitText from "@/components/split-text/SplitText";
 import HorizontalScroll from "@/components/horipage/HorizontalScroll";
 import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
-import LightBloom from "@/components/light-bloom/LightBloom";
-import Video from "@/components/video/Video";
 import ClipText from "@/components/clip-text/ClipText";
-import InterstellarPoster from "@/components/interstellar-poster/InterstellarPoster";
 
 export default function Home() {
   useEffect(() => {
@@ -26,12 +23,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="text-white font-thin overflow-x-hidden">
+    <main className="overflow-x-hidden">
       <Hero />
 
       <SplitText />
 
-      <div className="py-40 bg-neutral-100">
+      <div className="py-40 px-5 bg-neutral-100">
         <ClipText>perception</ClipText>
         <ClipText>through</ClipText>
         <ClipText>typeface</ClipText>
@@ -41,6 +38,7 @@ export default function Home() {
       <div className="w-full">
         <HorizontalScroll />
       </div>
+
       <Footer />
     </main>
   );

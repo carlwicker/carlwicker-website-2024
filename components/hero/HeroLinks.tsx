@@ -24,7 +24,7 @@ export default function HeroLinks() {
 
   return (
     <motion.div
-      className="flex gap-10 lg:gap-5 flex-col lg:flex-row font-extralight z-50"
+      className="flex gap-10 lg:gap-5 flex-col lg:flex-row z-50 font-thin text-white"
       ref={ref}
     >
       <motion.div
@@ -43,7 +43,6 @@ export default function HeroLinks() {
       </motion.div>
 
       <motion.div
-        ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
@@ -80,7 +79,6 @@ export default function HeroLinks() {
       </motion.div>
 
       <motion.div
-        ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
@@ -96,7 +94,6 @@ export default function HeroLinks() {
       </motion.div>
 
       <motion.div
-        ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}

@@ -41,18 +41,16 @@ export default function ClipText({
   }, []);
 
   return (
-    <div className=" ">
-      <div className="mx-auto container">
-        <div
-          className="w-fit text-[200px] text-neutral-900 font-extrabold tracking-tighter"
-          ref={textRef}
-          style={{ clipPath: "inset(0% 100%)" }}
-        >
-          <div className="h-[200px] uppercase text-neutral-800 leading-none">
-            <div ref={innerRef}>
-              <div>{children}</div>
-              <div>{children}</div>
-            </div>
+    <div className="mx-auto container">
+      <div
+        className="w-fit text-[200px] text-neutral-900 font-extrabold tracking-tighter"
+        ref={textRef}
+        style={{ clipPath: "inset(0% 100%)" }}
+      >
+        <div className="h-[200px] uppercase text-neutral-800 leading-none">
+          <div ref={innerRef}>
+            <div>{children}</div>
+            <div>{children}</div>
           </div>
         </div>
       </div>
