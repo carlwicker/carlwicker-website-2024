@@ -20,7 +20,7 @@ export default function Footer() {
       }}
       ref={ref}
     >
-      <div className="fixed bottom-0 sm:h-[375px] h-[600px] w-full flex items-center justify-center ">
+      <div className="fixed bottom-0 sm:h-[375px] h-[600px] w-full flex items-center justify-center text-white">
         <div className="container mx-auto px-5 flex gap-10  flex-col sm:flex-row font-extralight sm:text-xs lg:text-base">
           <div className="sm:w-[25vw]">
             <FooterStart isInView />
