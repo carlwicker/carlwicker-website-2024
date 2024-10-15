@@ -43,14 +43,14 @@ export default function Home() {
           perspiciatis, perferendis, nisi tempora accusamus dolorum cum
           voluptates expedita doloribus illo! Aliquam.
         </p>
-        <ClipText color="cyan" fontSize={155}>
+        <ClipText color="white" fontSize={155}>
           perception
         </ClipText>
-        <ClipText color="red" fontSize={255}>
+        <ClipText color="white" fontSize={255}>
           reaction
         </ClipText>
         <ClipText fontSize={300}>perception</ClipText>{" "}
-        <ClipText color="blue" fontSize={155}>
+        <ClipText color="white" fontSize={155}>
           perception
         </ClipText>
       </div>

@@ -27,7 +27,7 @@ export default function RootLayout({
       >
         {/* <PageTransitionEffect> */}
         <div className="fixed top-0 left-0 w-full h-full -z-1 no-touch">
-          {/* <ParticleCube /> */}
+          <ParticleCube />
         </div>
         <div className="relative z-10 w-full h-full overflow-auto">
           {children}
