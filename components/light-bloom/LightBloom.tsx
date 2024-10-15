@@ -10,11 +10,10 @@ export default function LightBloom() {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const donutRefs = useRef<THREE.Mesh<THREE.TorusGeometry>[]>([]);
 
-  const browserInfo = {
-    userAgent: (navigator as any).userAgentData?.userAgent,
-    platform: (navigator as any).userAgentData?.platform,
-    language: navigator.language,
-    vendor: (navigator as any).userAgentData?.vendor,
+  const getData = async () => {
+    const response = await fetch("https://httpbin.org/user-agent");
+    const data = await response.json();
+    return data;
   };
 
   useEffect(() => {
@@ -35,8 +34,8 @@ export default function LightBloom() {
     }
 
     // Add lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
-    scene.add(ambientLight);
+    // const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+    // scene.add(ambientLight);
 
     const redPointLight = new THREE.PointLight(0xff0000, 2, 50); // Red point light to enhance glow
     redPointLight.position.set(5, 5, 5);
@@ -192,23 +191,12 @@ export default function LightBloom() {
   return (
     <div ref={mountRef} className="relative">
       <div className="container mx-auto">
-        {/* <div className="absolute h-full flex flex-col justify-end lg:w-1/3 p-5 py-40">
-          <p>
-            User Agent:{" "}
-            <div className="font-extrabold">{browserInfo.userAgent}</div>
-          </p>
-          <p>
-            Platform:{" "}
-            <div className="font-extrabold">{browserInfo.platform}</div>
-          </p>
-          <p>
-            Language:{" "}
-            <div className="font-extrabold">{browserInfo.language}</div>
-          </p>
-          <p>
-            Vendor: <div className="font-extrabold">{browserInfo.vendor}</div>
-          </p>
-        </div> */}
+        <div className="absolute h-full flex flex-col justify-end  p-5 pb-60 text-white font-semibold text-6xl tracking-tight">
+          <p>User Agent:</p>
+          <p>Platform:</p>
+          <p>Language:</p>
+          <p>Vendor:</p>
+        </div>
       </div>
     </div>
   );
