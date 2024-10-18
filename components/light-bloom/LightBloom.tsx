@@ -190,14 +190,14 @@ export default function LightBloom() {
 
   return (
     <div ref={mountRef} className="relative">
-      <div className="container mx-auto">
+      {/* <div className="container mx-auto">
         <div className="absolute h-full flex flex-col justify-end  p-5 pb-60 text-white font-semibold text-6xl tracking-tight">
           <p>User Agent:</p>
           <p>Platform:</p>
           <p>Language:</p>
           <p>Vendor:</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

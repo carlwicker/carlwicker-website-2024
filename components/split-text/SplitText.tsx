@@ -41,10 +41,10 @@ export default function SplitText() {
   }, [textRef]);
 
   return (
-    <div className="w-full h-fit flex justify-center items-center text-white font-thin">
+    <div className="w-full h-fit flex justify-center items-center text-white">
       <div
         id="text"
-        className="container mx-auto p-5 text-[8vw] tracking-tighter leading-none lg:text-[4vw] pb-40 pt-20"
+        className="container mx-auto p-5 text-[8vw] leading-tight tracking-wide lg:text-[4vw] pb-40 pt-20"
         data-scroll
         data-scroll-speed="0.25"
       >
