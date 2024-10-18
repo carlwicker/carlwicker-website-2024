@@ -65,7 +65,7 @@ function ParticleCloud() {
 export default function ParticleCube() {
   return (
     <Canvas
-      style={{ height: "100vh", width: "100vw", backgroundColor: "#234" }}
+      style={{ minHeight: "100%", width: "100%", backgroundColor: "" }}
       camera={{ position: [0, 0, 1] }}
     >
       <ambientLight intensity={0.5} />

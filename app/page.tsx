@@ -31,15 +31,12 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden">
-      {/* <div className="fixed top-0 left-0 w-full h-fit -z-1 no-touch ">
+      {/* <Hero /> */}{" "}
+      <div className="fixed top-0 left-0 w-full h-full -z-1 no-touch ">
         <ParticleCube />
-      </div> */}
-
-      {/* <Hero /> */}
-
+      </div>
       <PerceptionTypography />
-
-      <div className="container mx-auto flex lg:flex-row flex-col lg:gap-10 gap-40 pb-60 lg:text-[1rem] text-[1.6rem] text-neutral-600">
+      {/* <div className="container mx-auto flex lg:flex-row flex-col lg:gap-10 gap-40 pb-60 lg:text-[1rem] text-[1.6rem] text-neutral-600">
         <div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
@@ -64,8 +61,7 @@ export default function Home() {
             nobis veritatis iure?
           </p>
         </div>
-      </div>
-
+      </div> */}
       {/* <SplitText /> */}
     </main>
   );
