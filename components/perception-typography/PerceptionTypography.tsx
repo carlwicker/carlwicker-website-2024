@@ -3,9 +3,9 @@ import LineSplit from "../line-splitter/LineSplit";
 
 export default function PerceptionTypography() {
   return (
-    <div className="container mx-auto flex flex-col py-64 text-[#666] gap-32 text-[1.2rem] lg:text-[2rem]">
+    <div className="container mx-auto flex flex-col py-64 text-[#eee] gap-32 text-[1.2rem] lg:text-[2rem]">
       <div className="flex flex-col gap-32">
-        <ClipText color="#666" clamp={[3, 10, 8]}>
+        <ClipText color="#eee" clamp={[3, 10, 8]}>
           perception
         </ClipText>
         <div className="lg:w-1/2" data-scroll data-scroll-speed="0.1">
@@ -19,7 +19,7 @@ export default function PerceptionTypography() {
       </div>
 
       <div className="flex flex-col gap-32 ">
-        <ClipText color="red" clamp={[3, 10, 8]}>
+        <ClipText color="#eee" clamp={[3, 10, 8]}>
           precision
         </ClipText>
         <div className="lg:w-1/2" data-scroll data-scroll-speed="0.1">
@@ -34,14 +34,14 @@ export default function PerceptionTypography() {
 
       <div className="flex flex-col gap-32 ">
         <div className="flex gap-2 flex-col">
-          <ClipText color="#666" clamp={[3, 20, 4]}>
+          <ClipText color="#eee" clamp={[3, 20, 4]}>
             perception
           </ClipText>
           <ClipText color="red" clamp={[2, 20, 16]}>
             reaction
           </ClipText>
-          <ClipText color="#666" clamp={[4, 30, 4]}>
-            perception
+          <ClipText color="#eee" clamp={[2, 15, 8]}>
+            precision
           </ClipText>
         </div>
         <div

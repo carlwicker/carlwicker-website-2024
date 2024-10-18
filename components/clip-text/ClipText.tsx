@@ -29,7 +29,7 @@ export default function ClipText({
         scrollTrigger: {
           trigger: textRef.current,
           start: "top 90%",
-          end: "top 50%",
+          end: "top 60%",
           scrub: true,
         },
       });

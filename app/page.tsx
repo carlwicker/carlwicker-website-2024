@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden">
       {/* <Hero /> */}{" "}
-      <div className="fixed top-0 left-0 w-full h-full -z-1 no-touch ">
+      <div className="fixed top-0 left-0 w-full h-full -z-1">
         <ParticleCube />
       </div>
       <PerceptionTypography />
