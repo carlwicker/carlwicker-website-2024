@@ -1,18 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import Footer from "@/components/footer/Footer";
-import Hero from "@/components/hero/Hero";
-import SplitText from "@/components/split-text/SplitText";
-import HorizontalScroll from "@/components/horipage/HorizontalScroll";
 import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
-import ClipText from "@/components/clip-text/ClipText";
-import Iracing from "@/components/iracing/Iracing";
-import InterstellarPoster from "@/components/interstellar-poster/InterstellarPoster";
-import LightBloom from "@/components/light-bloom/LightBloom";
-import UxUi from "@/components/uxui/UxUi";
-import LineSplit from "@/components/line-splitter/LineSplit";
 import ParticleCube from "@/components/particle-cube/ParticleCube";
 import PerceptionTypography from "@/components/perception-typography/PerceptionTypography";
 

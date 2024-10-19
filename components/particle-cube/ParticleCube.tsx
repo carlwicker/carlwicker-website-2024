@@ -15,7 +15,7 @@ function ParticleCloud() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const scale = 1 + scrollY * 0.0001; // Adjust the multiplier to control scaling speed
+      const scale = 1 + scrollY * 0.0005; // Adjust the multiplier to control scaling speed
       if (pointsRef.current) {
         gsap.to(pointsRef.current.scale, {
           x: scale,

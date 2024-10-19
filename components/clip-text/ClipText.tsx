@@ -44,7 +44,7 @@ export default function ClipText({
         y: () => -(textRef.current?.clientHeight ?? -500),
         scrollTrigger: {
           trigger: innerRef.current,
-          start: "top 80%",
+          start: "top 60%",
           end: "top 40%",
           scrub: true,
         },
