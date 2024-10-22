@@ -1,14 +1,45 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import LocomotiveScroll from "locomotive-scroll";
 import ParticleCube from "@/components/particle-cube/ParticleCube";
 import PerceptionTypography from "@/components/perception-typography/PerceptionTypography";
+import ThreeColumnTypography from "@/components/three-col-typo/ThreeColumnTypography";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const threeColRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const locomotiveScroll = new LocomotiveScroll();
+
+    gsap.set(threeColRef.current, {
+      position: "absolute",
+    });
+
+    gsap.to(threeColRef.current, {
+      y: threeColRef.current?.offsetTop,
+      scrollTrigger: {
+        trigger: threeColRef.current,
+        start: "top top",
+        end: "+=2000px",
+        scrub: true,
+        pin: true,
+        pinSpacing: false,
+        markers: true,
+        toggleActions: "play reset reset reset",
+        onLeave: () => {
+          gsap.set(threeColRef.current, {
+            opacity: 0,
+          });
+        },
+      },
+    });
+
     const lenis = new Lenis();
 
     function raf(time: any) {
@@ -17,42 +48,24 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf);
+
+    return () => {
+      locomotiveScroll.destroy();
+    };
   }, []);
 
   return (
-    <main className="overflow-x-hidden">
-      {/* <Hero /> */}{" "}
-      <div className="fixed top-0 left-0 w-full h-full -z-1">
+    <div data-scroll-container className="overflow-x-hidden">
+      {/* <Hero /> */}
+      <div className="fixed top-0 left-0 w-full h-full -z-50">
         <ParticleCube />
       </div>
       <PerceptionTypography />
-      {/* <div className="container mx-auto flex lg:flex-row flex-col lg:gap-10 gap-40 pb-60 lg:text-[1rem] text-[1.6rem] text-neutral-600">
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-            necessitatibus architecto iure cupiditate facilis temporibus
-            possimus voluptate minima repellendus suscipit, quos aperiam
-            accusantium ad vero a quae asperiores quia veritatis.
-          </p>
-        </div>
-        <div>
-          <p>
-            Ipsa dolorum ratione, non, sint consequuntur explicabo accusantium
-            facilis minus expedita praesentium quas quam ad amet quaerat aliquid
-            enim atque vel omnis quis et nesciunt. In nisi exercitationem
-            molestias facere.
-          </p>
-        </div>
-        <div>
-          <p>
-            Eveniet ipsa, fugit harum doloremque tenetur molestias voluptates,
-            quos fuga deleniti sunt consectetur maiores error dolore praesentium
-            commodi officia vitae quas consequatur ad illo. Culpa iusto unde
-            nobis veritatis iure?
-          </p>
-        </div>
+      {/* <div className="h-[3000px] "> */}
+      {/* <div ref={threeColRef}> */}
+      <ThreeColumnTypography />
+      {/* </div>
       </div> */}
-      {/* <SplitText /> */}
-    </main>
+    </div>
   );
 }

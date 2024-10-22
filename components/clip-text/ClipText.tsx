@@ -35,7 +35,7 @@ export default function ClipText({
       });
     }
     console.log(textRef.current?.offsetHeight);
-  }, []);
+  }, [clamp]);
 
   // Roll upwards animation
   useEffect(() => {

@@ -38,7 +38,7 @@ export default function LineSplit({ children }: { children: string }) {
 
   return (
     <div className="w-full">
-      <p ref={textRef}>{children}</p>
+      <div ref={textRef}>{children}</div>
     </div>
   );
 }

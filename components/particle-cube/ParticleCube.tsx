@@ -10,12 +10,12 @@ import gsap from "gsap";
 
 function ParticleCloud() {
   const pointsRef = useRef<Points>(null);
-  const [color, setColor] = useState("#111");
+  const [color, setColor] = useState("#652322");
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const scale = 1 + scrollY * 0.0005; // Adjust the multiplier to control scaling speed
+      const scale = 1 + scrollY * 0.0002; // Adjust the multiplier to control scaling speed
       if (pointsRef.current) {
         gsap.to(pointsRef.current.scale, {
           x: scale,
