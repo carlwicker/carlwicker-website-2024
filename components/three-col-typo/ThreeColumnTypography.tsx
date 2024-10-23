@@ -1,8 +1,10 @@
+import GlowingScrollCube from "../glowing-scroll-cube/GlowingScrollCube";
+
 export default function ThreeColumnTypography() {
   return (
     <div className="container mx-auto flex flex-col  z-50 pb-60 gap-48 text-[1rem] text-neutral-300 py-40 text-pretty">
-      <div className="flex flex-col gap-10 lg:w-1/3">
-        <p className="leading-relaxed tracking-wide first-letter:">
+      <div className="flex flex-col gap-10 lg:w-1/3 m-neutral-950 p-5 py-32 text-neutral-200 bg-black">
+        <p className="leading-relaxed tracking-wide capper">
           In the constantly evolving realm of digital interface design, scroll
           trajectory manipulation stands as a testament to the transformative
           power of technology in reshaping user interaction. No longer confined
@@ -10,7 +12,7 @@ export default function ThreeColumnTypography() {
           content exploration, the art of re-engineering the scroll experience
           has become a sophisticated endeavor, one in which developers and
           designers take the helm of user navigation. By seizing control of the
-          scroll’s natural behavior, they effectively transcend the limitations
+          scroll`s natural behavior, they effectively transcend the limitations
           of linear content flow, replacing it with a curated and bespoke
           narrative journey. This manipulation is not a mere technical
           alteration but rather a conceptual re-imagining of how users interact
@@ -23,29 +25,16 @@ export default function ThreeColumnTypography() {
           intentional and controlled web experience that subverts expectations
           of free navigation.
         </p>
-        <p className="leading-relaxed tracking-wide">
+        <p className="leading-relaxed tracking-wide text-2xl ml-5">
           Scroll interaction transformation introduces a new paradigm in user
-          engagement, one where the very input of the user—their instinctive
-          scrolling motions—are intercepted and augmented to create an entirely
-          new dimension of content interaction. This hijacking of default scroll
-          behavior serves not just as an enhancement but as a complete
-          reinvention of the user’s relationship with the digital space they are
-          navigating. The once passive and almost unconscious act of scrolling
-          has now been elevated into an active component of the user interface,
-          where every gesture, every swipe, and every flick of the mouse wheel
-          is met with a highly controlled response, perfectly tailored to unfold
-          a narrative or deliver information in the precise sequence and timing
-          that the designer intends. In this scenario, the scrollbar becomes
-          more than just a tool for vertical movement—it is an integral part of
-          the storytelling process, a vessel through which users are transported
-          through layers of content, animations, and interactive elements that
-          come to life only when triggered by the intentional orchestration of
-          scroll behavior.
+          engagement, one where the very input of the user — their instinctive
+          scrolling motions are intercepted and augmented to create an entirely
+          new dimension of content interaction.
         </p>
         <p className="leading-relaxed tracking-wide">
-          The designer’s vision of scroll orchestration refinement goes beyond
+          The designer`s vision of scroll orchestration refinement goes beyond
           mere aesthetic enhancement, entering the domain of interaction design,
-          where the user’s movement through the webpage is transformed into a
+          where the user`s movement through the webpage is transformed into a
           symphony of tightly choreographed visual elements, seamlessly blending
           animation, content delivery, and user interaction. Rather than
           allowing users to independently control their browsing pace and focus,
@@ -55,7 +44,7 @@ export default function ThreeColumnTypography() {
           meticulous design of the website, where content reveals itself in
           layered sequences, much like the unfolding of a story. This results in
           a more immersive user experience, where transitions and visual cues
-          are precisely timed to heighten engagement, guiding the user’s eye
+          are precisely timed to heighten engagement, guiding the user`s eye
           through the content in an intentional, almost cinematic manner. The
           once mundane and purely functional scrollbar now becomes an instrument
           of design and storytelling, an invisible yet potent force guiding the
@@ -63,8 +52,12 @@ export default function ThreeColumnTypography() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-10 lg:w-1/3">
-        <p className="leading-relaxed tracking-wide">
+      <div data-scroll data-scroll-speed={-0.45}>
+        <GlowingScrollCube />
+      </div>
+
+      <div className="flex flex-col gap-10 lg:w-1/3 m-neutral-950 p-5 py-32 text-neutral-200 bg-black">
+        <p className="leading-relaxed tracking-wide capper">
           In this context, scroll velocity modulation is a technique used to
           fine-tune the speed and acceleration of scrolling behavior, altering
           the rhythm of user interaction to heighten the sensory impact of the
@@ -80,7 +73,7 @@ export default function ThreeColumnTypography() {
           graceful, organic flow. The deliberate pacing of scroll behavior
           ensures that the user consumes content at the precise rate envisioned
           by the designer, preventing them from skimming too quickly or missing
-          key elements of the page’s narrative.
+          key elements of the page`s narrative.
         </p>
         <p className="leading-relaxed tracking-wide">
           At the heart of this concept lies the idea of scroll path redirection,
@@ -119,8 +112,8 @@ export default function ThreeColumnTypography() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-10 lg:w-1/3">
-        <p className="leading-relaxed tracking-wide">
+      <div className="flex flex-col gap-10 lg:w-1/3 m-neutral-950 p-5 py-32 text-neutral-200 bg-black">
+        <p className="leading-relaxed tracking-wide capper">
           Moreover, scroll flow customization allows developers to tailor the
           scroll experience to the specific needs and preferences of the user,
           creating a more personalized and adaptive interface. By leveraging
@@ -130,7 +123,7 @@ export default function ThreeColumnTypography() {
           forms, from adjusting the scroll speed to match the user's reading
           pace to implementing personalized content recommendations based on
           their scrolling patterns. This level of customization ensures that
-          each user’s experience is unique and optimized for their specific
+          each user`s experience is unique and optimized for their specific
           needs, creating a more engaging and satisfying interface that adapts
           to their preferences in real-time. By giving users greater control
           over the scroll experience, developers can create a more intuitive and
@@ -146,7 +139,7 @@ export default function ThreeColumnTypography() {
           impact, whether through carefully timed animations, interactive
           elements, or dynamic transitions. By adjusting the scroll behavior in
           real-time based on user input, developers can create a more fluid and
-          responsive interface that adapts to the user’s needs and preferences,
+          responsive interface that adapts to the user`s needs and preferences,
           ensuring a seamless and engaging experience from start to finish. This
           precision allows for a more cohesive and integrated design, where
           every element of the webpage works in harmony to create a unified and
@@ -162,7 +155,7 @@ export default function ThreeColumnTypography() {
           dynamics to better align with the goals of the webpage, developers can
           create a more intentional and cohesive experience, where every
           interaction feels purposeful and deliberate. This recalibration not
-          only enhances the user’s understanding and retention of the content
+          only enhances the user`s understanding and retention of the content
           but also creates a more immersive and engaging experience that
           encourages longer and more meaningful engagement with the webpage.
         </p>

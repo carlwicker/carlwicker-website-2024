@@ -38,7 +38,7 @@ body::-webkit-scrollbar {
   touch-action: none;
 }
 
-p::first-letter {
+.capper:first-letter {
   float: left;
   font-size: 80px;
   line-height: 75px;

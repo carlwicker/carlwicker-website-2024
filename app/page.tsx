@@ -8,6 +8,7 @@ import PerceptionTypography from "@/components/perception-typography/PerceptionT
 import ThreeColumnTypography from "@/components/three-col-typo/ThreeColumnTypography";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import GlowingScrollCube from "@/components/glowing-scroll-cube/GlowingScrollCube";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,6 +64,9 @@ export default function Home() {
       <PerceptionTypography />
       {/* <div className="h-[3000px] "> */}
       {/* <div ref={threeColRef}> */}
+      <div data-scroll data-scroll-speed={-0.65} className="sticky top-0">
+        <GlowingScrollCube />
+      </div>
       <ThreeColumnTypography />
       {/* </div>
       </div> */}
