@@ -27,7 +27,7 @@ export default function Home() {
 
       {/* <SplitText /> */}
 
-      <PerceptionTypography />
+      {/* <PerceptionTypography color/> */}
 
       <div className="container mx-auto flex lg:flex-row flex-col lg:gap-10 gap-40 pb-60 lg:text-[1rem] text-[1.6rem] text-neutral-600">
         <div>
