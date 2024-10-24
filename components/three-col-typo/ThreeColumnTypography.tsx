@@ -2,28 +2,22 @@ import GlowingScrollCube from "../glowing-scroll-cube/GlowingScrollCube";
 
 export default function ThreeColumnTypography() {
   return (
-    <div className="container mx-auto flex flex-col  z-50 pb-60 gap-48 text-[1rem] text-neutral-300 py-40 text-pretty">
-      <div className="flex flex-col gap-10 lg:w-1/3 m-neutral-950 p-5 py-32 text-neutral-200 bg-black">
+    <div className="container mx-auto flex flex-col  z-50 pb-60 text-[1rem] gap-16 text-neutral-300 py-40 text-pretty">
+      <div className="flex flex-col gap-10 lg:min-w-[520px] w-1/2 m-neutral-950 p-32 text-neutral-300 bg-black">
         <p className="leading-relaxed tracking-wide capper">
-          In the constantly evolving realm of digital interface design, scroll
-          trajectory manipulation stands as a testament to the transformative
-          power of technology in reshaping user interaction. No longer confined
-          to the mundane vertical or horizontal axis that traditionally governs
-          content exploration, the art of re-engineering the scroll experience
-          has become a sophisticated endeavor, one in which developers and
-          designers take the helm of user navigation. By seizing control of the
-          scroll&apos;s natural behavior, they effectively transcend the
-          limitations of linear content flow, replacing it with a curated and
-          bespoke narrative journey. This manipulation is not a mere technical
-          alteration but rather a conceptual re-imagining of how users interact
-          with web content. It imposes a deliberate, orchestrated motion that
-          aligns with the thematic and visual goals of the website, guiding the
-          user's attention with meticulous precision. As users engage in this
-          redefined experience, they are no longer simply scrolling through
-          content but are, in essence, being scrolled—their journey shaped and
-          steered by the invisible hand of the developer, crafting a far more
-          intentional and controlled web experience that subverts expectations
-          of free navigation.
+          By seizing control of the scroll&apos;s natural behavior, they
+          effectively transcend the limitations of linear content flow,
+          replacing it with a curated and bespoke narrative journey. This
+          manipulation is not a mere technical alteration but rather a
+          conceptual re-imagining of how users interact with web content. It
+          imposes a deliberate, orchestrated motion that aligns with the
+          thematic and visual goals of the website, guiding the user's attention
+          with meticulous precision. As users engage in this redefined
+          experience, they are no longer simply scrolling through content but
+          are, in essence, being scrolled—their journey shaped and steered by
+          the invisible hand of the developer, crafting a far more intentional
+          and controlled web experience that subverts expectations of free
+          navigation.
         </p>
         <p className="leading-relaxed tracking-wide text-2xl ml-5">
           Scroll interaction transformation introduces a new paradigm in user
@@ -53,11 +47,7 @@ export default function ThreeColumnTypography() {
         </p>
       </div>
 
-      <div data-scroll data-scroll-speed={-0.45}>
-        <GlowingScrollCube />
-      </div>
-
-      <div className="flex flex-col gap-10 lg:w-1/3 m-neutral-950 p-5 py-32 text-neutral-200 bg-black">
+      <div className="flex flex-col gap-10 lg:w-1/2 m-neutral-950 text-neutral-200 bg-black p-32">
         <p className="leading-relaxed tracking-wide capper">
           In this context, scroll velocity modulation is a technique used to
           fine-tune the speed and acceleration of scrolling behavior, altering
@@ -94,71 +84,25 @@ export default function ThreeColumnTypography() {
           space with an intentionality that elevates the experience beyond mere
           browsing.
         </p>
-        <p className="leading-relaxed tracking-wide">
-          In some instances, scroll autonomy disruption plays a critical role in
-          creating a sense of novelty and surprise in the user experience. By
-          temporarily taking control of the scroll input and overriding the
-          user's expectations, developers can create moments of unexpected
-          interaction that capture the user's attention and immerse them more
-          fully in the experience. This disruption can take many forms, from
-          sudden shifts in scroll direction to the introduction of complex
-          animations or interactive elements that react to the user's input in
-          real-time. These moments of disruption serve to break the monotony of
-          traditional scroll behavior, injecting a sense of playfulness and
-          engagement that keeps the user intrigued and invested in the content.
-          By carefully balancing moments of control with periods of user
-          autonomy, developers can create a dynamic tension that enhances the
-          overall experience and encourages users to explore the digital space
-          more fully.
-        </p>
       </div>
 
-      <div className="flex flex-col gap-10 lg:w-1/3 m-neutral-950 p-5 py-32 text-neutral-200 bg-black">
+      <div className="flex flex-col gap-10 lg:w-1/2 m-neutral-950 text-neutral-200 bg-black p-32">
         <p className="leading-relaxed tracking-wide capper">
-          Moreover, scroll flow customization allows developers to tailor the
-          scroll experience to the specific needs and preferences of the user,
-          creating a more personalized and adaptive interface. By leveraging
-          advanced algorithms and machine learning techniques, developers can
-          analyze user behavior and dynamically adjust scroll behavior to suit
-          their individual browsing habits. This customization can take many
-          forms, from adjusting the scroll speed to match the user's reading
-          pace to implementing personalized content recommendations based on
-          their scrolling patterns. This level of customization ensures that
-          each user&apos;s experience is unique and optimized for their specific
+          Scroll flow customization allows developers to tailor the scroll
+          experience to the specific needs and preferences of the user, creating
+          a more personalized and adaptive interface. By leveraging advanced
+          algorithms and machine learning techniques, developers can analyze
+          user behavior and dynamically adjust scroll behavior to suit their
+          individual browsing habits. This customization can take many forms,
+          from adjusting the scroll speed to match the user's reading pace to
+          implementing personalized content recommendations based on their
+          scrolling patterns. This level of customization ensures that each
+          user&apos;s experience is unique and optimized for their specific
           needs, creating a more engaging and satisfying interface that adapts
           to their preferences in real-time. By giving users greater control
           over the scroll experience, developers can create a more intuitive and
           responsive interface that enhances user satisfaction and encourages
           longer engagement with the content.
-        </p>
-        <p className="leading-relaxed tracking-wide">
-          In terms of precision scroll behavior adjustment, the manipulation of
-          scroll trajectory enables developers to fine-tune the user experience
-          to an unprecedented degree, allowing for precise control over how and
-          when content is revealed. This level of control ensures that every
-          element of the webpage is presented in a way that maximizes its
-          impact, whether through carefully timed animations, interactive
-          elements, or dynamic transitions. By adjusting the scroll behavior in
-          real-time based on user input, developers can create a more fluid and
-          responsive interface that adapts to the user&apos;s needs and
-          preferences, ensuring a seamless and engaging experience from start to
-          finish. This precision allows for a more cohesive and integrated
-          design, where every element of the webpage works in harmony to create
-          a unified and immersive experience.
-        </p>
-        <p className="leading-relaxed tracking-wide">
-          The concept of scroll engagement recalibration takes this a step
-          further by rethinking the very nature of user interaction with the
-          webpage. Rather than viewing scroll input as a simple navigational
-          tool, developers treat it as an active component of the user
-          experience, one that can be manipulated and controlled to create a
-          more engaging and dynamic interface. By recalibrating the scroll
-          dynamics to better align with the goals of the webpage, developers can
-          create a more intentional and cohesive experience, where every
-          interaction feels purposeful and deliberate. This recalibration not
-          only enhances the user&apos;s understanding and retention of the
-          content but also creates a more immersive and engaging experience that
-          encourages longer and more meaningful engagement with the webpage.
         </p>
       </div>
     </div>

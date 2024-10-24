@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import FooterEnd from "./FooterEnd";
 
 interface FooterEndProps {
   isInView: boolean;
@@ -27,46 +28,52 @@ export default function FooterMiddle({ isInView }: FooterEndProps) {
   };
 
   return (
-    <div ref={ref} className="font-semibold">
-      <motion.div className="font-extralight">Web / Telephone</motion.div>
-      <motion.div
-        className="flex flex-col "
-        variants={container}
-        initial="hidden"
-        animate={isInView ? "show" : "hidden"}
-      >
-        <motion.span variants={child} className={``}>
-          <Link href="/" className="hover:text-red-400">
-            https://carlwicker.co.uk
-          </Link>
-        </motion.span>
+    <div className="flex justify-between w-full">
+      <div ref={ref} className="font-semibold tracking-tight leading-relaxed">
+        <motion.div className="font-extralight">Web / Telephone</motion.div>
+        <motion.div
+          className="flex flex-col "
+          variants={container}
+          initial="hidden"
+          animate={isInView ? "show" : "hidden"}
+        >
+          <motion.span variants={child} className={``}>
+            <Link href="/" className="hover:text-red-400">
+              https://carlwicker.co.uk
+            </Link>
+          </motion.span>
 
-        <motion.span variants={child} className={``}>
-          <a
-            href="https://github.com/carlwicker"
-            target="_blank"
+          <motion.span variants={child} className={``}>
+            <a
+              href="https://github.com/carlwicker"
+              target="_blank"
+              className="hover:text-red-400"
+            >
+              https://github.com/carlwicker
+            </a>
+          </motion.span>
+
+          <motion.a
+            variants={child}
+            className="hover:text-red-400"
+            href="mailto:carlwicker@gmail.com"
+          >
+            carlwicker@gmail.com
+          </motion.a>
+
+          <motion.a
+            variants={child}
+            href="tel:44 7810 830237"
             className="hover:text-red-400"
           >
-            https://github.com/carlwicker
-          </a>
-        </motion.span>
+            44 7810 830237
+          </motion.a>
+        </motion.div>
+      </div>
 
-        <motion.a
-          variants={child}
-          className="hover:text-red-400"
-          href="mailto:carlwicker@gmail.com"
-        >
-          carlwicker@gmail.com
-        </motion.a>
-
-        <motion.a
-          variants={child}
-          href="tel:44 7810 830237"
-          className="hover:text-red-400"
-        >
-          44 7810 830237
-        </motion.a>
-      </motion.div>
+      <div className="justify-self-end">
+        <FooterEnd />
+      </div>
     </div>
   );
 }

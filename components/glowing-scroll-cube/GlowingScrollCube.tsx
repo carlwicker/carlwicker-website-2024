@@ -31,7 +31,10 @@ export default function GlowingScrollCube() {
     const geometry = new THREE.BoxGeometry();
     const material = new THREE.MeshStandardMaterial({ color: "#991b1b" });
     const cube = new THREE.Mesh(geometry, material);
+
     scene.add(cube);
+
+    cube.position.set(0, 0, 0); // Set the cube position
 
     // Add a directional light to the left of the cube
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -39,13 +42,15 @@ export default function GlowingScrollCube() {
     scene.add(directionalLight);
 
     // Position the camera
-    camera.position.z = 2;
+    camera.position.x = 3;
+
+    camera.lookAt(0, 0, 0); // Point the camera at the cube
 
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // Rotate the cube
+      // Rotate the cub
       cube.rotation.x += 0.004;
       cube.rotation.y += 0.04;
       cube.rotation.z += 0.04;
@@ -54,6 +59,7 @@ export default function GlowingScrollCube() {
     };
 
     animate();
+
     // Handle window resize
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -75,7 +81,7 @@ export default function GlowingScrollCube() {
   return (
     <div
       ref={mountRef}
-      style={{ width: "100%", height: "100vh", background: "transparent" }}
+      style={{ background: "transparent" }}
       className="cube"
     />
   );

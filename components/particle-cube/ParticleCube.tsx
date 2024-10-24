@@ -8,14 +8,14 @@ import {
 } from "three";
 import gsap from "gsap";
 
-function ParticleCloud() {
+function ParticleCloud({ color }: { color: string }) {
   const pointsRef = useRef<Points>(null);
-  const [color, setColor] = useState("#652322");
+  // const [color, setColor] = useState("#652322");
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const scale = 1 + scrollY * 0.0002; // Adjust the multiplier to control scaling speed
+      const scale = 1 + scrollY * 0.0003; // Adjust the multiplier to control scaling speed
       if (pointsRef.current) {
         gsap.to(pointsRef.current.scale, {
           x: scale,
@@ -62,7 +62,7 @@ function ParticleCloud() {
   );
 }
 
-export default function ParticleCube() {
+export default function ParticleCube({ color }: { color: string }) {
   return (
     <Canvas
       style={{ minHeight: "100%", width: "100%", backgroundColor: "" }}
@@ -70,7 +70,7 @@ export default function ParticleCube() {
     >
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
-      <ParticleCloud />
+      <ParticleCloud color={color} />
     </Canvas>
   );
 }

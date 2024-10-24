@@ -1,7 +1,8 @@
 import ClipText from "../clip-text/ClipText";
 import LineSplit from "../line-splitter/LineSplit";
 
-export default function PerceptionTypography() {
+export default function PerceptionTypography({ color }: { color: string }) {
+  console.log("color", color);
   return (
     <div
       className="container mx-auto flex flex-col py-64 text-[#eee] gap-32 text-[1.2rem] lg:text-[2rem]"
@@ -11,13 +12,17 @@ export default function PerceptionTypography() {
         {/* <ClipText color="#eee" clamp={[3, 10, 8]}>
           perception
         </ClipText> */}
-        <div className="xl:w-1/2" data-scroll data-scroll-speed="0.05">
+        <div
+          className="xl:w-1/2 tracking-tight leading-relaxed"
+          data-scroll
+          data-scroll-speed="0.05"
+        >
           <LineSplit>
-            Web developer focused on crafting cutting-edge, dynamic user
+            I'm a Web developer focused on crafting cutting-edge, dynamic user
             experiences with NextJS, React, and TypeScript. I specialize in
             high-performance interfaces, leveraging GSAP, Framer Motion, and
             ThreeJS for immersive animations and interactions. With decades of
-            experience with CSS and a strong command of JavaScript, I create
+            experience in Front End and a strong command of JavaScript, I create
             sleek, responsive, and scalable applications that push the
             boundaries of modern web development.
           </LineSplit>
@@ -50,7 +55,7 @@ export default function PerceptionTypography() {
           <ClipText color="#eee" clamp={[2, 12, 8]}>
             environmental
           </ClipText>
-          <div className="text-red-800">
+          <div style={{ color: color }}>
             <ClipText clamp={[2, 14, 8]}>interaction </ClipText>
           </div>
           <ClipText color="#eee" clamp={[2, 12, 8]}>
@@ -58,7 +63,11 @@ export default function PerceptionTypography() {
           </ClipText>
         </div>
         <div className="lg:text-[3rem] text-[1.4rem]">
-          <div className="" data-scroll data-scroll-speed="0.05">
+          <div
+            className="tracking-tight leading-relaxed"
+            data-scroll
+            data-scroll-speed="0.05"
+          >
             <LineSplit>
               Enhancing user experience through structured layouts and elevating
               brand identity with powerful typography, my design approach
