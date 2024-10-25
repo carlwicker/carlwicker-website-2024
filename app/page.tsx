@@ -58,7 +58,7 @@ export default function Home() {
       {/* <div className="h-[3000px] "> */}
       {/* <div ref={threeColRef}> */}
 
-      <ThreeColumnTypography />
+      {/* <ThreeColumnTypography /> */}
       {/* </div>
       </div> */}
     </div>
