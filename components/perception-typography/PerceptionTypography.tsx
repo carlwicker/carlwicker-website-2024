@@ -5,10 +5,10 @@ export default function PerceptionTypography({ color }: { color: string }) {
   console.log("color", color);
   return (
     <div
-      className="container mx-auto flex flex-col py-64 text-[#eee] gap-32 text-[1.2rem] lg:text-[2rem]"
+      className="container mx-auto flex flex-col py-64 text-[#eee] text-[1.2rem] lg:text-[2rem] gap-32"
       data-scroll
     >
-      <div className="flex flex-col gap-32">
+      <div className="flex flex-col">
         {/* <ClipText color="#eee" clamp={[3, 10, 8]}>
           perception
         </ClipText> */}
@@ -29,24 +29,7 @@ export default function PerceptionTypography({ color }: { color: string }) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-32 ">
-        {/* <ClipText color="#eee" clamp={[3, 10, 8]}>
-          precision
-        </ClipText> */}
-        <div className="lg:w-2/3" data-scroll data-scroll-speed="-0.2">
-          {/* <LineSplit>
-            Using advanced CSS techniques, I transform static designs into
-            dynamic, responsive websites that work flawlessly across devices.
-            From complex animations to subtle interactions, I pay close
-            attention to every element to ensure smooth performance and
-            intuitive navigation. My expertise lies in creating clean, efficient
-            code that brings creative concepts to life in the most optimized way
-            possible.
-          </LineSplit> */}
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-32 ">
+      <div className="flex flex-col gap-32">
         <div
           className="flex gap-2 flex-col"
           data-scroll
@@ -56,7 +39,7 @@ export default function PerceptionTypography({ color }: { color: string }) {
             environmental
           </ClipText>
           <div style={{ color: color }}>
-            <ClipText clamp={[2, 14, 8]}>interaction </ClipText>
+            <ClipText clamp={[2, 12, 8]}>interaction </ClipText>
           </div>
           <ClipText color="#eee" clamp={[2, 12, 8]}>
             transformation

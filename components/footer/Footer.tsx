@@ -1,3 +1,5 @@
+"use client";
+
 import FooterStart from "./FooterStart";
 import FooterMiddle from "./FooterMiddle";
 import { useInView } from "framer-motion";

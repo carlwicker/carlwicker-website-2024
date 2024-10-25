@@ -1,35 +1,23 @@
-"use client";
-
 import { Inter } from "next/font/google";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "./globals.css";
-import PageTransitionEffect from "@/components/PageTransitionEfffect";
-import { usePathname } from "next/navigation";
+// import PageTransitionEffect from "@/components/PageTransitionEfffect";
 import Footer from "@/components/footer/Footer";
-import { useEffect, useRef } from "react";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Carl Wicker | Web Developer",
+  description:
+    "I create sleek, responsive, and scalable applications that push the boundaries of modern web development.",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-  const pageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      if (pageRef.current) {
-        // Recalculate page length or perform any necessary updates
-        const pageHeight = pageRef.current.scrollHeight;
-        console.log("Page height:", pageHeight);
-      }
-    };
-
-    handleRouteChange();
-  }, [pathname]);
-
   return (
     <html lang="en">
       <body
@@ -38,15 +26,11 @@ export default function RootLayout({
       >
         {/* <TopNav /> */}
         {/* <PageTransitionEffect> */}
-        <div
-          ref={pageRef}
-          className="relative z-10 w-full h-full overflow-auto"
-        >
+        <div className="relative z-10 w-full h-full overflow-auto">
           <div className="container mx-auto px-5 py-10 min-h-screen">
             {children}
           </div>
           <div className="z-0">
-            {" "}
             <Footer />
           </div>
         </div>
