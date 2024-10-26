@@ -27,11 +27,10 @@ export default function Home() {
     requestAnimationFrame(raf);
 
     function getRandomHexColor() {
-      const letters = "0123456789ABCDEF";
+      const letters = "012345"; // Use only mid-tone hex characters
       let color = "#";
       for (let i = 0; i < 6; i++) {
-        // Generate a random number between 0 and 7 to ensure dark colors
-        color += letters[Math.floor(Math.random() * 4)];
+        color += letters[Math.floor(Math.random() * letters.length)];
       }
       setColor(color);
     }
