@@ -1,0 +1,64 @@
+{
+  "store": {
+    "name": "GreenRoots Seed Store",
+    "website": "https://www.greenroots.com",
+    "location": "Brighton UK"
+  },
+  "seeds": [
+    {
+      "id": "1",
+      "name": "Blue Dream",
+      "type": "Hybrid",
+      "thc_content": "18-24%",
+      "cbd_content": "0.1-0.2%",
+      "effects": ["Relaxed", "Euphoric", "Happy", "Creative"],
+      "flavor_profile": ["Berry", "Sweet", "Earthy"],
+      "price_per_seed": 1,
+      "availability": true
+    },
+    {
+      "id": "2",
+      "name": "OG Kush",
+      "type": "Indica",
+      "thc_content": "20-26%",
+      "cbd_content": "0.05-0.1%",
+      "effects": ["Relaxed", "Euphoric", "Sleepy", "Hungry"],
+      "flavor_profile": ["Pine", "Earthy", "Woody"],
+      "price_per_seed": 10,
+      "availability": true
+    },
+    {
+      "id": "3",
+      "name": "Sour Diesel",
+      "type": "Sativa",
+      "thc_content": "18-22%",
+      "cbd_content": "0.1-0.3%",
+      "effects": ["Uplifted", "Energetic", "Happy", "Creative"],
+      "flavor_profile": ["Diesel", "Earthy", "Pungent"],
+      "price_per_seed": 11,
+      "availability": true
+    },
+    {
+      "id": "4",
+      "name": "Northern Lights",
+      "type": "Indica",
+      "thc_content": "16-21%",
+      "cbd_content": "0.1-0.2%",
+      "effects": ["Relaxed", "Happy", "Sleepy", "Euphoric"],
+      "flavor_profile": ["Spicy", "Sweet", "Earthy"],
+      "price_per_seed": 9,
+      "availability": false
+    },
+    {
+      "id": "5",
+      "name": "Green Crack",
+      "type": "Sativa",
+      "thc_content": "17-24%",
+      "cbd_content": "0.1-0.2%",
+      "effects": ["Energizing", "Happy", "Uplifting", "Focused"],
+      "flavor_profile": ["Citrus", "Mango", "Earthy"],
+      "price_per_seed": 11.5,
+      "availability": true
+    }
+  ]
+}
